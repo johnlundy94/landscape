@@ -1,3 +1,4 @@
+import "../styles/Home.css";
 import Nav from "../components/Nav";
 import Hero from "../components/Hero";
 import Gallery from "../components/Gallery";
@@ -10,7 +11,7 @@ import Footer from "../components/Footer";
 
 function Home() {
   return (
-    <div>
+    <div className="Home">
       <Nav />
       <Hero />
       <Gallery />

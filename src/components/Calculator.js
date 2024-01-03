@@ -1,5 +1,5 @@
 function Calculator() {
-  return <>Calculator</>;
+  return <div className="Calculator">Calculator</div>;
 }
 
 export default Calculator;

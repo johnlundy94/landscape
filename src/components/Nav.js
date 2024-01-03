@@ -1,5 +1,7 @@
+import "../styles/Nav.css";
+
 function Nav() {
-  return <>Nav</>;
+  return <div className="Nav">Nav</div>;
 }
 
 export default Nav;
