@@ -17,6 +17,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  scroll-behavior: smooth;
 }
 
 /* Box sizing rules */
@@ -41,18 +42,6 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-bottom: 1rem;
-}
-
-/* Links */
-a {
-  color: #007bff;
-  text-decoration: none;
-  background-color: transparent;
-}
-
-a:hover {
-  color: #0056b3;
-  text-decoration: underline;
 }
 
 /* Utility Classes */

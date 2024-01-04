@@ -1,5 +1,9 @@
 function Testimonials() {
-  return <div className="Testimonials">Testimonials</div>;
+  return (
+    <div className="Testimonials" id="testimonials">
+      Testimonials
+    </div>
+  );
 }
 
 export default Testimonials;
