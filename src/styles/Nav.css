@@ -1,17 +1,25 @@
 .Nav{
-    display: flex;
-    justify-content: space-between;
+    max-width: 100%;
+    display: grid;
+    grid-column: 3 / span 8;
     align-items: center;
-    padding: 0 20px;
+}
+
+.Nav .brand-logo {
+    display: grid;
+    grid-column: 3 / span 1;
 }
 
 .Nav .nav-buttons{
-    display: flex;
-    justify-content: flex-end;
+    font-size: smaller;
+    display: flex; /* This will line up the <a> tags in a row */
+    /* justify-content: flex-start; Align items to the start of the flex container */
+    grid-column: 4 / 6; /* Span the rest of the columns until the end */
+    align-items: center; /* Align the items vertically */
 }
 
 .Nav .nav-buttons a {
-    margin-left: 20px;
+    margin-left: 5px;
     cursor: pointer;
     text-decoration: none;
 }

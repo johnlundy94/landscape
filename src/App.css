@@ -1,33 +1,5 @@
 .App {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Main content styles */
-.main-content {
-  flex-grow: 1;
-  padding: 1rem;
-}
-
-/* Styling for a common container class */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Grid system */
-.grid {
-  display: grid;
-  gap: 1rem;
-}
-
-.grid-two {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-three {
-  grid-template-columns: repeat(3, 1fr);
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  max-width: 100%;
 }
