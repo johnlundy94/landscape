@@ -8,15 +8,15 @@ import landscape5 from "../assets/landscape5.png";
 function Hero() {
   return (
     <div className="hero-container">
-      <div className="images-left-column">
-        <img src={landscape1} alt="First" className="image-one" />
-        <img src={landscape2} alt="Second" className="image-two" />
-        <img src={landscape3} alt="Third" className="image-three" />
-      </div>
-      <div className="images-right-column">
-        <img src={landscape4} alt="Fourth" className="image-four" />
-        <img src={landscape5} alt="Fifth" className="image-five" />
-      </div>
+      {/* <div className="images-left-column"> */}
+      <img src={landscape1} alt="First" className="image-one" />
+      <img src={landscape2} alt="Second" className="image-two col-2-row-2" />
+      <img src={landscape3} alt="Third" className="image-three col-1-row-3" />
+      {/* </div> */}
+      {/* <div className="images-right-column"> */}
+      <img src={landscape4} alt="Fourth" className="image-four col-2-row-3" />
+      <img src={landscape5} alt="Fifth" className="image-five col-1-row-2" />
+      {/* </div> */}
       {/* 
       <div className="hero-text">
         <h1>Collect your best articles easily</h1>
