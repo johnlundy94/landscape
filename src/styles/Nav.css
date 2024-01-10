@@ -42,7 +42,8 @@
     backdrop-filter: blur(10px); /* Apply a blur effect to the background */
     -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
     border: 1px solid rgba(255, 255, 255, 0.25); /* Optional: adds a light border */
-
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
 }
 
 @media (max-width: 500px) {
