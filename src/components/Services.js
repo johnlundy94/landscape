@@ -3,7 +3,7 @@ import CustomCard from "./CustomCard";
 
 function Services() {
   return (
-    <div className="Services" id="services">
+    <div className="services-container" id="services">
       <h1>Services Offered</h1>
       <div className="card1">
         <CustomCard />
