@@ -14,8 +14,8 @@ function Home() {
     <div className="Home">
       <Nav />
       <Hero />
-      <Gallery />
       <Services />
+      <Gallery />
       <About />
       <Testimonials />
       <Contact />
