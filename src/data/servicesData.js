@@ -1,7 +1,11 @@
+import service1 from "../assets/service1.png";
+import service2 from "../assets/service2.png";
+import service3 from "../assets/service3.png";
+
 const servicesData = [
   {
     id: 1,
-    image: "path_to_your_image_design.jpg",
+    image: service1,
     title: "Landscape Design",
     description:
       "Landscape design involves the artful arrangement and modification of outdoor spaces...",
@@ -9,7 +13,7 @@ const servicesData = [
   },
   {
     id: 2,
-    image: "path_to_your_image_outdoor.jpg",
+    image: service2,
     title: "Outdoor Living Spaces",
     description:
       "Transforming your backyard into a serene outdoor living space is an investment...",
@@ -17,7 +21,7 @@ const servicesData = [
   },
   {
     id: 3,
-    image: "path_to_your_image_irrigation.jpg",
+    image: service3,
     title: "Irrigation",
     description:
       "Efficient irrigation systems are key to maintaining a vibrant landscape while conserving water...",
