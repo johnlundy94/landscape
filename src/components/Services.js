@@ -1,19 +1,20 @@
 import "../styles/Services.css";
 import CustomCard from "./CustomCard";
+import servicesData from "../data/servicesData";
 
 function Services() {
   return (
     <div className="services-container" id="services">
       <h1>Services Offered</h1>
-      <div className="card1">
-        <CustomCard />
-      </div>
-      <div className="card2">
-        <CustomCard />
-      </div>
-      <div className="card3">
-        <CustomCard />
-      </div>
+      {servicesData.map((service, index) => (
+        <CustomCard
+          key={service.id}
+          image={service.image}
+          title={service.title}
+          description={service.description}
+          link={service.link}
+        />
+      ))}
     </div>
   );
 }
