@@ -8,7 +8,7 @@
     width: 100%;
 }
 
-h1 {
+.services-title {
     grid-column: span 3;
     text-align: center;
 }
@@ -32,6 +32,10 @@ h1 {
     .services-container {
         grid-template-columns: repeat(6, auto);
         grid-template-rows: 10% auto auto;
+    }
+    .services-title{
+        grid-column: 2 / span 4;
+        text-align: center;
     }
     .card1 {
         grid-column: 2 / span 2;

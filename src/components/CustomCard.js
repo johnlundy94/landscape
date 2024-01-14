@@ -5,9 +5,9 @@ import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-function CustomCard({ image, title, description, link }) {
+function CustomCard({ className, image, title, description, link }) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card className={className} sx={{ maxWidth: 345 }}>
       <CardMedia component="img" height="140" image={image} alt={title} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

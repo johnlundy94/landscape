@@ -5,7 +5,7 @@ import servicesData from "../data/servicesData";
 function Services() {
   return (
     <div className="services-container" id="services">
-      <h1>Services Offered</h1>
+      <h1 className="services-title">Services Offered</h1>
       {servicesData.map((service, index) => (
         <CustomCard
           key={service.id}
@@ -13,6 +13,7 @@ function Services() {
           title={service.title}
           description={service.description}
           link={service.link}
+          className={`card${service.id}`}
         />
       ))}
     </div>
