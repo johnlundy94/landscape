@@ -1,7 +1,6 @@
 import "../styles/Home.css";
 import Nav from "../components/Nav";
 import Hero from "../components/Hero";
-import Gallery from "../components/Gallery";
 import Services from "../components/Services";
 import About from "../components/About";
 import Testimonials from "../components/Testimonials";
@@ -15,7 +14,6 @@ function Home() {
       <Nav />
       <Hero />
       <Services />
-      <Gallery />
       <About />
       <Testimonials />
       <Contact />
