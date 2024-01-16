@@ -10,7 +10,7 @@ function About() {
     <div className="about-container">
       <h1 className="about-title">About Us</h1>
 
-      <Card sx={{ maxWidth: 345 }} className="card">
+      <Card className="card">
         <CardContent>
           <Typography
             gutterBottom
@@ -31,8 +31,8 @@ function About() {
           </Typography>
         </CardContent>
       </Card>
-      <img src={man} alt="Man" className="man col-1-row-2" />
-      <img src={group} alt="Group" className="group col-2-row-2" />
+      <img src={man} alt="Man" className="man" />
+      <img src={group} alt="Group" className="group" />
     </div>
   );
 }
