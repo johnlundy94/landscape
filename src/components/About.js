@@ -10,7 +10,7 @@ function About() {
     <div className="about-container">
       <h1 className="about-title">About Us</h1>
 
-      <Card className="card">
+      <Card className="about-card">
         <CardContent>
           <Typography
             gutterBottom

@@ -13,7 +13,7 @@
     text-align: center;
 }
 
-.card {
+.about-card {
     max-width: 100%;
     z-index: 2;
     grid-row: 2 / span 4;
@@ -40,7 +40,7 @@
 
 
 @media (max-width: 1381px) {
-    .card {
+    .about-card {
         margin-top: 150px;
         margin-bottom: 150px;
         grid-column: 8 / span 5;
@@ -48,7 +48,7 @@
   }
 
   @media (max-width: 1146px) {
-    .card {
+    .about-card {
         margin-top: 100px;
         margin-bottom: 100px;
         grid-column: 8 / span 5;
@@ -56,7 +56,7 @@
   }
 
   @media (max-width: 1034px) {
-    .card {
+    .about-card {
         margin-top: 50px;
         margin-bottom: 50px;
         grid-column: 8 / span 5;
@@ -73,7 +73,7 @@
 
         grid-column: 3 / span 6;
     }
-    .card {
+    .about-card {
         margin-top: 50px;
         margin-bottom: 50px;
         grid-column: 8 / span 5;
@@ -82,21 +82,21 @@
 
   @media (max-width: 828px) {
 
-    .card {
+    .about-card {
 
         grid-column: 8 / span 7;
     }
   }
 
   @media (max-width: 828px) {
-    .card {
+    .about-card {
         margin-top: 25px;
         margin-bottom: 25px;
     }
   }
 
   @media (max-width: 669px) {
-    .card {
+    .about-card {
         margin-top: 10px;
         margin-bottom: 10px;
     }
@@ -112,7 +112,7 @@
 
         grid-column: 1 / span 8;
     }
-    .card {
+    .about-card {
         margin-top: 50px;
         margin-bottom: 50px;
         grid-column: 8 / span 9;
@@ -120,14 +120,14 @@
   }
 
   @media (max-width: 540px) {
-    .card {
+    .about-card {
         margin-top: 5px;
         margin-bottom: 5px;
     }
   }
 
   @media (max-width: 632px) {
-    .card {
+    .about-card {
         grid-column: 7 / span 10;
     }
   }
@@ -145,7 +145,7 @@
         grid-column: 9 / span 8;
         grid-row: 2 / span 4;
     }
-    .card {
+    .about-card {
         margin-top: 30px;
         grid-column: 1 / span 16;
         grid-row: 5 / span 5;

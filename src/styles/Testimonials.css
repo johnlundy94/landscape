@@ -1,5 +1,18 @@
-.Testimonials{
+.testimonials-container{
+    padding-top: 50px;
     display: grid;
-    grid-column: 3 / span 8;
+    gap: .5rem;
+    grid-template-rows: 10% repeat(2, auto);
+    grid-column: 2 / span 10;
     width: 100%;
+}
+
+.testimonials-title {
+    text-align: center;
+}
+
+.testimonials-card {
+    max-width: 100%;
+    z-index: 2;
+    grid-row: 2;
 }
