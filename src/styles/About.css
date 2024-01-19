@@ -16,8 +16,10 @@
 .card {
     max-width: 100%;
     z-index: 2;
-    grid-row: 3 / span 2;
+    grid-row: 2 / span 4;
     grid-column: 8 / span 4;
+    margin-top: 200px;
+    margin-bottom: 200px;
 }
 
 .man{
@@ -36,74 +38,120 @@
     grid-row: 4 / span 2;
 }
 
-@media (max-width: 1297px) {
 
+@media (max-width: 1381px) {
     .card {
-        max-width: 100%;
-        z-index: 2;
-        grid-row: 3 / span 2;
-        grid-column: 8 / span 6;
-    }
-    
-  }
-
-  @media (max-width: 1071px) {
-
-    .card {
-        max-width: 100%;
-        z-index: 2;
-        grid-row: 3 / span 2;
-        grid-column: 7 / span 8;
-    }
-    .man{
-        z-index: 1;
-        width: 100%; 
-        height: auto;
-        grid-column: 3 / span 5;
-        grid-row: 2 / span 2;
-    }
-    
-    .group{
-        z-index: 1;
-        width: 100%; 
-        height: auto;
-        grid-column: 3 / span 5;
-        grid-row: 4 / span 2;
+        margin-top: 150px;
+        margin-bottom: 150px;
+        grid-column: 8 / span 5;
     }
   }
 
-  @media (max-width: 900px) {
-    .about-container{
-        padding-top: 50px;
-        display: grid;
-        gap: .5rem;
-        grid-template-columns: repeat(16, 1fr);
-        grid-template-rows: 10% repeat(6, auto);
-        grid-column: 2 / span 10;
-        width: 100%;
-    }
+  @media (max-width: 1146px) {
     .card {
-        max-width: 100%;
-        z-index: 2;
-        grid-row: 2 / span 6;
-        grid-column: 7 / span 8;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        grid-column: 8 / span 5;
+    }
+  }
+
+  @media (max-width: 1034px) {
+    .card {
         margin-top: 50px;
         margin-bottom: 50px;
-
+        grid-column: 8 / span 5;
     }
+  }
+
+  @media (max-width: 919px) {
     .man{
-        z-index: 1;
-        width: 100%; 
-        height: auto;
-        grid-column: 3 / span 5;
-        grid-row: 2 / span 3;
+
+        grid-column: 3 / span 6;
     }
     
     .group{
-        z-index: 1;
-        width: 100%; 
-        height: auto;
-        grid-column: 3 / span 5;
-        grid-row: 5 / span 3;
+
+        grid-column: 3 / span 6;
+    }
+    .card {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        grid-column: 8 / span 5;
+    }
+  }
+
+  @media (max-width: 828px) {
+
+    .card {
+
+        grid-column: 8 / span 7;
+    }
+  }
+
+  @media (max-width: 828px) {
+    .card {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+  }
+
+  @media (max-width: 669px) {
+    .card {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 632px) {
+    .man{
+
+        grid-column: 1 / span 8;
+    }
+    
+    .group{
+
+        grid-column: 1 / span 8;
+    }
+    .card {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        grid-column: 8 / span 9;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .card {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+  }
+
+  @media (max-width: 632px) {
+    .card {
+        grid-column: 7 / span 10;
+    }
+  }
+
+  @media (max-width: 919px) {
+    .about-container{
+        grid-template-rows: 10% repeat(8, auto);
+    }    
+    .man{
+        grid-column: 1 / span 8;
+        grid-row: 2 / span 4;
+    }
+    
+    .group{
+        grid-column: 9 / span 8;
+        grid-row: 2 / span 4;
+    }
+    .card {
+        margin-top: 30px;
+        grid-column: 1 / span 16;
+        grid-row: 5 / span 5;
+        
+    }
+    .about-sub-text {
+        padding-bottom: 10px;
     }
   }

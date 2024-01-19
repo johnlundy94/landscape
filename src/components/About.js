@@ -20,7 +20,11 @@ function About() {
           >
             Meet Name
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography
+            className="about-sub-text"
+            variant="body2"
+            color="text.secondary"
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
