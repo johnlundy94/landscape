@@ -9,7 +9,7 @@ function Testimonials() {
       {testimonialsData.map((testimonial, index) => (
         <TestimonialsCard
           key={testimonial.id}
-          title={testimonial.title}
+          customer={testimonial.customer}
           description={testimonial.description}
           className={`testimonials-card${testimonial.id}`}
         />

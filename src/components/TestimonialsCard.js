@@ -2,15 +2,15 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
-function TestimonialsCard({ className, title, description }) {
+function TestimonialsCard({ className, customer, description }) {
   return (
     <Card className={className}>
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {title}
+        <Typography variant="body1" color="text.primary">
+          &quot;{description}&quot;
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {description}
+        <Typography gutterTop variant="h5" component="div">
+          {customer}
         </Typography>
       </CardContent>
     </Card>

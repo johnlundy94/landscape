@@ -4,8 +4,6 @@ import Hero from "../components/Hero";
 import Services from "../components/Services";
 import About from "../components/About";
 import Testimonials from "../components/Testimonials";
-import Contact from "../components/Contact";
-import Calculator from "../components/Calculator";
 import Footer from "../components/Footer";
 
 function Home() {
@@ -16,8 +14,6 @@ function Home() {
       <Services />
       <About />
       <Testimonials />
-      <Contact />
-      <Calculator />
       <Footer />
     </div>
   );

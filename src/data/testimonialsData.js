@@ -1,21 +1,21 @@
 const testimonialsData = [
   {
     id: 1,
-    title: "Landscape Design",
+    customer: "Customer Name",
     description:
-      "Landscape design involves the artful arrangement and modification of outdoor spaces...",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas pharetra convallis posuere morbi leo urna molestie at elementum. Auctor elit sed vulputate mi sit amet mauris commodo. Duis ultricies lacus sed turpis tincidunt id. Augue lacus viverra vitae congue eu.",
   },
   {
     id: 2,
-    title: "Outdoor Living Spaces",
+    customer: "Customer Name",
     description:
-      "Transforming your backyard into a serene outdoor living space is an investment...",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas pharetra convallis posuere morbi leo urna molestie at elementum. Auctor elit sed vulputate mi sit amet mauris commodo. Duis ultricies lacus sed turpis tincidunt id. Augue lacus viverra vitae congue eu.",
   },
   {
     id: 3,
-    title: "Irrigation",
+    customer: "Customer Name",
     description:
-      "Efficient irrigation systems are key to maintaining a vibrant landscape while conserving water...",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas pharetra convallis posuere morbi leo urna molestie at elementum. Auctor elit sed vulputate mi sit amet mauris commodo. Duis ultricies lacus sed turpis tincidunt id. Augue lacus viverra vitae congue eu.",
   },
 ];
 
