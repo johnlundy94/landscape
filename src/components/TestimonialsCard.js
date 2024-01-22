@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 
 function TestimonialsCard({ className, title, description }) {
   return (
-    <Card className={className} sx={{ maxWidth: 345 }}>
+    <Card className={className}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {title}
