@@ -1,9 +1,10 @@
 .about-container{
     padding-top: 50px;
+    padding-bottom: 35px;
     display: grid;
     gap: .5rem;
     grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: 10% repeat(4, auto);
+    grid-template-rows: 40px repeat(4, auto);
     grid-column: 2 / span 10;
     width: 100%;
 }
