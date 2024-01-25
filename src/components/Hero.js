@@ -8,7 +8,7 @@ import landscape5 from "../assets/landscape5.png";
 function Hero() {
   return (
     <div className="hero-container">
-      <h1 className="text-span-2">Collect your best articles easily</h1>
+      <h1 className="text-span-2">Company Name</h1>
       <div className="slider">
         <img src={landscape1} alt="First" className="image-one" />
         <img src={landscape2} alt="Second" className="image-two" />
