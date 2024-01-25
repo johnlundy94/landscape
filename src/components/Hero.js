@@ -36,10 +36,10 @@ function Hero() {
       <div className="slider-container">
         {landscapes.map((landscape, index) => (
           <Slider
+            className="slider"
             key={index}
             inProp={activeIndex === index}
             direction="left"
-            className="slider"
           >
             <img src={landscape} alt={`Slide ${index}`} />
           </Slider>
