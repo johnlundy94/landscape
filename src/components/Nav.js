@@ -1,42 +1,131 @@
-import { useState } from "react";
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
+import AdbIcon from '@mui/icons-material/Adb';
 import "../styles/Nav.css";
-import { Link } from "react-scroll";
-import Hamburger from "../assets/hamburger.svg";
+
+const pages = ['Quote', 'Services', 'Properties'];
 
 function Nav() {
-  const [expand, setExpand] = useState(false);
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+
 
   return (
-    <div className="Nav">
-      <div className="brand-logo">Logo</div>
-      <div className="hamburger" onClick={() => setExpand(!expand)}>
-        <img src={Hamburger} alt="Menu" />
-      </div>
-      <div className={`nav-buttons ${expand ? "expanded" : ""}`}>
-        <Link to="hero" smooth={true} duration={1000} className="link">
-          Home
-        </Link>
-        <Link to="gallery" smooth={true} duration={1000} className="link">
-          Gallery
-        </Link>
-        <Link to="services" smooth={true} duration={1000} className="link">
-          Services
-        </Link>
-        <Link to="about" smooth={true} duration={1000} className="link">
-          About
-        </Link>
-        <Link to="testimonials" smooth={true} duration={1000} className="link">
-          Testimonials
-        </Link>
-        <Link to="contact" smooth={true} duration={1000} className="link">
-          Contact
-        </Link>
-        <Link to="calculator" smooth={true} duration={1000} className="link">
-          Calculator
-        </Link>
-      </div>
-    </div>
+    <AppBar position="static" className='Nav'>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          {/* Logo Picture Desktop */}
+          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          {/* Logo Title Desktop */}
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="#app-bar-with-responsive-menu"
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            LOGO
+          </Typography>
+
+            {/* Hamburger */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+
+          {/* Logo Picture Phone */}
+          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          {/* Logo Title Phone */}
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href="#app-bar-with-responsive-menu"
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            LOGO
+          </Typography>
+          {/* Nav links desktop */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 }
-
 export default Nav;
