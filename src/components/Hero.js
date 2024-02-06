@@ -40,12 +40,14 @@ function Hero() {
             <SlideComponent className="slider" isActive={activeIndex === index} direction="left" imgSrc={landscape}/>
         ))}
       </div>
+      <div className="slider-buttons">
       <Button variant="text" onClick={prevSlide}>
         Previous
       </Button>
       <Button variant="text" onClick={nextSlide}>
         Next
       </Button>
+      </div>
     </div>
   );
 }
