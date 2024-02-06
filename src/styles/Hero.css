@@ -25,6 +25,13 @@
     height: 100%;
   }
 
+  .slider-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   @media (min-width: 488px) {
     .hero-container {
       grid-column: 3 / span 8;

@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import "../styles/Hero.css";
-import Slider from "./Slider";
-import {Fade }from "@mui/material";
+import SlideComponent from "../api/SlideComponent";
+import FadeComponent from "../api/FadeComponent";
 import landscape1 from "../assets/landscape1.png";
 import landscape2 from "../assets/landscape2.png";
 import landscape3 from "../assets/landscape3.png";
@@ -10,7 +10,10 @@ import landscape5 from "../assets/landscape5.png";
 import { Button } from "@mui/material";
 
 function Hero() {
+
   const [activeIndex, setActiveIndex] = useState(0);
+  const [fadeProp, setFadeProp] = useState(false);
+
   const landscapes = [
     landscape1,
     landscape2,
@@ -31,23 +34,27 @@ function Hero() {
     );
   };
 
+  useEffect(() => {
+        // Start the fade-out effect before sliding in the new slide.
+    setFadeProp(true);
+    const timer = setTimeout(() => {
+      setFadeProp(false);
+    }, 5000);
+
+    return () => clearTimeout(timer)
+  }, [activeIndex])
+
   return (
     <div className="hero-container">
       <h1 className="text-span-2">Company Name</h1>
       <div className="slider-container">
         {landscapes.map((landscape, index) => (
-          <Slider
-            className="slider"
-            key={index}
-            inProp={activeIndex === index}
-            direction="left"
-            easing={{ enter: 'ease-out', exit: 'sharp' }}
-            timeout={{ enter: 500, exit: 300 }}
-          >
-            <Fade in={activeIndex === index} timeout={{enter: 5000, exit: 5000}}>
-            <img src={landscape} alt={`Slide ${index}`} className="slider-image"/>
-            </Fade>
-          </Slider>
+          <Fragment key={index}>
+            {fadeProp && activeIndex === index && (
+              <FadeComponent className="slider" imgSrc={landscape} isActive={fadeProp}/>
+            )}
+            <SlideComponent className="slider" isActive={activeIndex === index} direction="left" imgSrc={landscape}/>
+          </Fragment>
         ))}
       </div>
       <Button variant="text" onClick={prevSlide}>
