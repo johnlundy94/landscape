@@ -1,7 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import "../styles/Hero.css";
 import SlideComponent from "../api/SlideComponent";
-import FadeComponent from "../api/FadeComponent";
 import landscape1 from "../assets/landscape1.png";
 import landscape2 from "../assets/landscape2.png";
 import landscape3 from "../assets/landscape3.png";
@@ -12,7 +11,6 @@ import { Button } from "@mui/material";
 function Hero() {
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const [fadeProp, setFadeProp] = useState(false);
 
   const landscapes = [
     landscape1,
@@ -34,27 +32,12 @@ function Hero() {
     );
   };
 
-  useEffect(() => {
-        // Start the fade-out effect before sliding in the new slide.
-    setFadeProp(true);
-    const timer = setTimeout(() => {
-      setFadeProp(false);
-    }, 5000);
-
-    return () => clearTimeout(timer)
-  }, [activeIndex])
-
   return (
     <div className="hero-container">
       <h1 className="text-span-2">Company Name</h1>
       <div className="slider-container">
         {landscapes.map((landscape, index) => (
-          <Fragment key={index}>
-            {fadeProp && activeIndex === index && (
-              <FadeComponent className="slider" imgSrc={landscape} isActive={fadeProp}/>
-            )}
             <SlideComponent className="slider" isActive={activeIndex === index} direction="left" imgSrc={landscape}/>
-          </Fragment>
         ))}
       </div>
       <Button variant="text" onClick={prevSlide}>
