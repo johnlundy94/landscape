@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/Hero.css";
 import Slider from "./Slider";
+import {Fade }from "@mui/material";
 import landscape1 from "../assets/landscape1.png";
 import landscape2 from "../assets/landscape2.png";
 import landscape3 from "../assets/landscape3.png";
@@ -40,8 +41,12 @@ function Hero() {
             key={index}
             inProp={activeIndex === index}
             direction="left"
+            easing={{ enter: 'ease-out', exit: 'sharp' }}
+            timeout={{ enter: 500, exit: 300 }}
           >
-            <img src={landscape} alt={`Slide ${index}`} />
+            <Fade in={activeIndex === index} timeout={{enter: 5000, exit: 5000}}>
+            <img src={landscape} alt={`Slide ${index}`} className="slider-image"/>
+            </Fade>
           </Slider>
         ))}
       </div>

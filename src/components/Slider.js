@@ -1,8 +1,8 @@
 import Slide from "@mui/material/Slide";
 
-const Slider = ({ inProp, direction, children, ...otherProps }) => {
+const Slider = ({ inProp, direction, easing, timeout, children, ...otherProps }) => {
   return (
-    <Slide direction={direction} in={inProp} {...otherProps}>
+    <Slide direction={direction} in={inProp} easing={easing} timeout={timeout} {...otherProps}>
       {children}
     </Slide>
   );
