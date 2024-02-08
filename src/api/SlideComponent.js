@@ -1,10 +1,14 @@
 import Slide from "@mui/material/Slide";
 import "../styles/Hero.css"
 
-const SlideComponent = ({ isActive, direction, imgSrc }) => {
+const SlideComponent = ({ isActive, direction, imgSrc, children }) => {
   return (
     <Slide direction={direction} in={isActive} timeout={{enter: 1000, exit: 1000}} >
-      <img src={imgSrc} alt="Image" className="slider-image"/>
+      <div className="slider-content">
+        <img src={imgSrc} alt="Slide image" className="slider-image"/>
+        {children}
+      </div>
+
     </Slide>
   );
 };

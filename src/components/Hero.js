@@ -34,10 +34,12 @@ function Hero() {
 
   return (
     <div className="hero-container">
-      <h1 className="text-span-2">Company Name</h1>
+      <h1 className="text-span-2">Our Portfolio</h1>
       <div className="slider-container"  id="properties" >
         {landscapes.map((landscape, index) => (
-            <SlideComponent className="slider" isActive={activeIndex === index} direction="left" imgSrc={landscape}/>
+          <SlideComponent className="slider" isActive={activeIndex === index} direction="left" imgSrc={landscape}>
+          <div className="slide-text">This is slide {index + 1}</div>
+        </SlideComponent>
         ))}
       </div>
       <div className="slider-buttons">
