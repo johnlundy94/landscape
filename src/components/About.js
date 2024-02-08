@@ -8,7 +8,7 @@ import group from "../assets/group.png";
 function About() {
   return (
     <div className="about-container">
-      <h1 className="about-title">About Us</h1>
+      <h1 className="about-title" id="about" >About Us</h1>
 
       <Card className="about-card">
         <CardContent>

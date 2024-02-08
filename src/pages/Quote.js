@@ -6,6 +6,7 @@ function Quote() {
   return (
     <div className="Quote">
       <Nav />
+      Quote
       <Footer />
     </div>
   );

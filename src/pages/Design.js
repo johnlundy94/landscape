@@ -6,6 +6,7 @@ function Design() {
   return (
     <div className="Design">
       <Nav />
+      Design
       <Footer />
     </div>
   );

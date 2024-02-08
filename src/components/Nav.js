@@ -11,8 +11,14 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import "../styles/Nav.css";
+import { Link } from 'react-router-dom'
 
-const pages = ['Quote', 'Services', 'Properties'];
+const pages = [
+  { name: "Quote", path: "/quote", type: "link" },
+  { name: "Properties", anchor: "properties", type: "anchor" },
+  { name: "Services", anchor: "services", type: "anchor" },
+  { name: "About", anchor: "about", type: "anchor" },
+  { name: "Testimonials", anchor: "testimonials", type: "anchor" }];
 
 function Nav() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -24,8 +30,6 @@ function Nav() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-
 
   return (
     <AppBar position="static" color="primary" className='Nav' >
@@ -107,11 +111,26 @@ function Nav() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              {pages.map((page) => {
+                const menuItemContent = (
+                  <Typography textAlign="center">{page.name}</Typography>
+                )
+
+                return (
+                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                    {page.type === "link" ? (
+                      <Link to={page.path} style={{ textDecoration: "none", color: "inherit" }}>
+                        {menuItemContent}
+                      </Link>
+                    ) : (
+                      <a href={`#${page.anchor}`} 
+                      style={{ textDecoration: "none", color: "inherit" }}>
+                        {menuItemContent}
+                      </a>
+                    )}
+                  </MenuItem>
+                );
+              })}
             </Menu>
           </Box>
 
@@ -119,11 +138,19 @@ function Nav() {
           <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.name}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {page.type === 'link' ? (
+                  <Link to={page.path} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    {page.name}
+                  </Link>
+                ) : (
+                  <a href={`#${page.anchor}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    {page.name}
+                  </a>
+                )}
               </Button>
             ))}
           </Box>

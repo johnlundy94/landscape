@@ -5,7 +5,7 @@ import testimonialsData from "../data/testimonialsData";
 function Testimonials() {
   return (
     <div className="testimonials-container">
-      <h1 className="testimonials-title">Testimonials</h1>
+      <h1 className="testimonials-title" id="testimonials" >Testimonials</h1>
       {testimonialsData.map((testimonial, index) => (
         <TestimonialsCard
           key={testimonial.id}

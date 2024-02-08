@@ -10,8 +10,8 @@ function Home() {
   return (
     <div className="Home">
       <Nav />
-      <Hero />
-      <Services />
+      <Hero/>
+      <Services/>
       <About />
       <Testimonials />
       <Footer />
