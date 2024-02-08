@@ -9,7 +9,7 @@ const servicesData = [
     title: "Landscape Design",
     description:
       "Landscape design involves the artful arrangement and modification of outdoor spaces...",
-    link: "/services/landscape-design",
+    link: "/design",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const servicesData = [
     title: "Outdoor Living Spaces",
     description:
       "Transforming your backyard into a serene outdoor living space is an investment...",
-    link: "/services/outdoor-living",
+    link: "/outdoor",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const servicesData = [
     title: "Irrigation",
     description:
       "Efficient irrigation systems are key to maintaining a vibrant landscape while conserving water...",
-    link: "/services/irrigation",
+    link: "/irrigation",
   },
 ];
 

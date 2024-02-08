@@ -3,6 +3,8 @@ import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "./styles/muiTheme";
 import Home from "./pages/Home";
 import Design from "./pages/Design";
+import Outdoor from "./pages/Outdoor"; 
+import Irrigation from "./pages/Irrigation"; 
 import Property from "./pages/Property";
 import Quote from "./pages/Quote"; 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -15,6 +17,8 @@ function App() {
         <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/design" element={<Design/>}/>
+        <Route path="/outdoor" element={<Outdoor/>}/>
+        <Route path="/irrigation" element={<Irrigation/>}/>
         <Route path="/property" element={<Property/>}/>
         <Route path="/quote" element={<Quote/>}/>
         </Routes>

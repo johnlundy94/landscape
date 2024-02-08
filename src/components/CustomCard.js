@@ -4,6 +4,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { Link } from 'react-router-dom';
 
 function CustomCard({ className, image, title, description, link }) {
   return (
@@ -18,7 +19,9 @@ function CustomCard({ className, image, title, description, link }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">{link}</Button>
+        <Button size="small">
+          <Link to={link}>Learn More</Link>
+        </Button>
       </CardActions>
     </Card>
   );
