@@ -1,0 +1,117 @@
+.properties-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  place-content: center;
+}
+
+.hero-container {
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 40px auto;
+    grid-column: 2 / span 10;
+    max-width: 100%;
+  }
+
+  .slider-container{
+    grid-column: span 3;
+    position: relative;
+    overflow: hidden; 
+    width: 100%; 
+    height: 70vh; 
+    object-fit: cover;
+  }
+
+  .text-span-2 {
+    text-align: center;
+    grid-column: 2 / span 2;
+  }
+  
+  .slider {
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+  }
+
+  .slider-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .slider-buttons {
+    grid-column: span 3;
+    text-align: center;
+  }
+
+  .slider-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #fff; /* White text color */
+    padding: 20px; /* Adjust padding as needed */
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+
+  @media (min-width: 488px) {
+    .hero-container {
+      grid-column: 3 / span 8;
+    }
+    .slider-container{
+      grid-column: span 3;
+      position: relative;
+      overflow: hidden; 
+      width: 100%; 
+      height: 50vh; 
+      object-fit: cover;
+    }
+  }
+
+  @media (min-width: 650px) {
+    .hero-container {
+      grid-column: 4 / span 6;
+    }
+    .slider-container{
+      grid-column: span 3;
+      position: relative;
+      overflow: hidden; 
+      width: 100%; 
+      height: 50vh; 
+      object-fit: cover;
+    }
+  }
+
+  
+  @media (min-width: 1018px) {
+    .hero-container {
+      grid-column: 5 / span 4;
+    }
+    .slider-container{
+      grid-column: span 3;
+      position: relative;
+      overflow: hidden; 
+      width: 100%; 
+      height: 50vh; 
+      object-fit: cover;
+    }
+  }
+  @media (max-width: 2000px) {
+    .slider-container{
+      grid-column: span 3;
+      position: relative;
+      overflow: hidden; 
+      width: 100%; 
+      height: 70vh; 
+      object-fit: cover;
+    }
+  }

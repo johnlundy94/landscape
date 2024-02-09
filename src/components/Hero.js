@@ -15,11 +15,11 @@ function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const landscapes = [
-    {name: 'Serenity Gardens', image: landscape1},
-    {name: 'Elysian Fields',image: landscape2},
-    {name: 'Arcadian Retreat',image: landscape3},
-    {name: 'Eden Enclave',image: landscape4},
-    {name: 'Oasis Estates',image: landscape5},
+    {name: 'Serenity Gardens', image: landscape1, link: '/serenity'},
+    {name: 'Elysian Fields',image: landscape2, link: "/elysian"},
+    {name: 'Arcadian Retreat',image: landscape3, link: "/arcadian"},
+    {name: 'Eden Enclave',image: landscape4, link: '/eden'},
+    {name: 'Oasis Estates',image: landscape5, link: '/oasis'},
   ];
 
   const nextSlide = () => {
@@ -47,7 +47,7 @@ function Hero() {
                 key={index + 1}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link to={"/property"} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link to={landscape.link} style={{ textDecoration: 'none', color: 'inherit' }}>
                   {"view property"}
                 </Link>
               </Button></div>
