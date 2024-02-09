@@ -57,6 +57,10 @@ function Arcadian() {
           </Button>
         </div>
       </div>
+      <h1 className="property-title">Project Overview</h1>
+      <p className="property-text">
+      Our latest landscape project marries the rustic charm of a natural sanctuary with the refined beauty of a cultivated garden. We've composed a tableau that respects the local ecosystem while introducing elements of classic design. Meandering flagstone paths invite leisurely strolls through diverse plantings, where native species mingle with selected perennials for year-round color and texture. Water features, from babbling brooks to still ponds, serve as serene focal points, inviting local wildlife and providing a soothing soundtrack to the garden's ambience. At dusk, strategically placed lighting transforms the space into a nocturnal wonderland, emphasizing the silhouettes and forms of the diverse flora. This landscape is not just a visual feast but an homage to the symbiotic relationship between human touch and nature's hand.
+      </p>
       <Footer />
     </div>
   );

@@ -57,6 +57,10 @@ function Serenity() {
           </Button>
         </div>
       </div>
+      <h1 className="property-title">Project Overview</h1>
+      <p className="property-text">
+      Our naturalistic landscape projects cater to clients wishing to immerse themselves in a serene, nature-inspired oasis. These designs mimic the untamed beauty of the natural world, integrating native plant species to attract local wildlife and support biodiversity. By embracing the existing topography, we crafted spaces that feel both wild and welcoming, with meandering pathways leading through a tapestry of wildflowers, ornamental grasses, and native shrubs. Rain gardens and natural water features play a pivotal role, not only as focal points but also in managing stormwater sustainably. The selection of plants aimed to provide a succession of blooms, ensuring visual interest throughout the seasons while offering habitats for birds, bees, and butterflies. To enhance the sense of seclusion and peace, we utilized materials that blend seamlessly with the natural environment, such as wood, stone, and gravel. Our naturalistic landscapes are designed as a sanctuary for both people and wildlife, offering a tranquil retreat from the bustling world outside.
+      </p>
       <Footer />
     </div>
   );

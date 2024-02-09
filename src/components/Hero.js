@@ -1,11 +1,11 @@
 import { Fragment, useEffect, useState } from "react";
 import "../styles/Hero.css";
 import SlideComponent from "../api/SlideComponent";
-import landscape1 from "../assets/landscape1.png";
-import landscape2 from "../assets/landscape2.png";
-import landscape3 from "../assets/landscape3.png";
-import landscape4 from "../assets/landscape4.png";
-import landscape5 from "../assets/landscape5.png";
+import landscape1 from "../assets/serenity/serenity1.png";
+import landscape2 from "../assets/elysian/elysian1.png";
+import landscape3 from "../assets/arcadian/arcadian1.png";
+import landscape4 from "../assets/eden/eden1.png";
+import landscape5 from "../assets/oasis/oasis1.png";
 import { Button } from "@mui/material";
 import { Link } from 'react-router-dom'
 

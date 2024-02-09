@@ -57,6 +57,10 @@ function Oasis() {
           </Button>
         </div>
       </div>
+      <h1 className="property-title">Project Overview</h1>
+      <p className="property-text">
+      In our contemporary landscape projects, clients sought modernity fused with functionality, leading to the creation of spaces that celebrate minimalism and innovation. These landscapes are characterized by their clean lines, sustainable materials, and a palette that compliments the urban environment. We focused on creating versatile outdoor living areas that serve as extensions of the home, incorporating elements like sleek fire pits, outdoor kitchens, and serene water features, all designed to foster social gatherings and personal relaxation. The use of drought-resistant plantings and environmentally friendly water management systems underscored our commitment to sustainability. Lighting played a critical role in these designs, with strategically placed fixtures that highlight the architectural features and plants, creating a dynamic visual experience that evolves from day to night. Our plant selection was intentionally minimalist, favoring architectural plants that provide structure and texture, enhancing the contemporary aesthetic.
+      </p>
       <Footer />
     </div>
   );

@@ -61,7 +61,18 @@
     text-align: center;
     box-sizing: border-box;
   }
-  
+
+  .property-title {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    grid-column: span 12;
+    text-align: center;
+} 
+
+.property-text {
+  grid-column: 2/ span 10;
+  text-align: left;
+} 
 
   @media (min-width: 488px) {
     .hero-container {

@@ -57,6 +57,10 @@ function Elysian() {
           </Button>
         </div>
       </div>
+      <h1 className="property-title">Project Overview</h1>
+      <p className="property-text">
+      For our clients desiring a touch of elegance and symmetry, we meticulously designed formal landscape projects that embody precision and grace. By leveraging the natural contours of the land, we sculpted spaces that reflect the classic beauty of formal gardens. Our approach included the strategic placement of geometrically arranged flora, complemented by the serene ambiance of central water fountains and ornate sculptures. Pathways of finely cut stone guided visitors through the garden, enhancing the sense of order and harmony. To further accentuate the beauty of these spaces after sundown, we integrated sophisticated landscape lighting, casting soft glows that outline the garden's architecture. The selection of plants was paramount, with an emphasis on traditional elements like boxwoods, manicured lawns, and seasonal blooms, such as tulips and peonies, to ensure year-round allure. This careful curation and design foster a timeless elegance that invites tranquility and reflection.
+      </p>
       <Footer />
     </div>
   );
