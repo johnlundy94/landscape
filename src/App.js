@@ -2,10 +2,9 @@ import "./App.css";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "./styles/muiTheme";
 import Home from "./pages/Home";
-import Design from "./pages/Design";
+import Design from "./pages/services/Design";
 import Outdoor from "./pages/Outdoor"; 
 import Irrigation from "./pages/Irrigation"; 
-import Property from "./pages/Property";
 import Quote from "./pages/Quote"; 
 import Arcadian from "./pages/properties/Arcadian"
 import Eden from "./pages/properties/Eden"
@@ -24,7 +23,6 @@ function App() {
         <Route path="/design" element={<Design/>}/>
         <Route path="/outdoor" element={<Outdoor/>}/>
         <Route path="/irrigation" element={<Irrigation/>}/>
-        <Route path="/property" element={<Property/>}/>
         <Route path="/quote" element={<Quote/>}/>
         <Route path="/arcadian" element={<Arcadian/>}/>        
         <Route path="/eden" element={<Eden/>}/>        

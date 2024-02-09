@@ -1,4 +1,4 @@
-import "../styles/Services.css";
+import "../styles/ServicesComp.css";
 import CustomCard from "./CustomCard";
 import servicesData from "../data/servicesData";
 
