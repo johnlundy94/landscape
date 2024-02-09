@@ -8,7 +8,7 @@
     width: 100%;
 }
 
-.services-title {
+.services-comp-title {
     grid-column: span 3;
     text-align: center;
 }
@@ -37,7 +37,7 @@
         grid-template-columns: repeat(6, auto);
         grid-template-rows: 10% auto auto;
     }
-    .services-title{
+    .services-comp-title{
         grid-column: 2 / span 4;
         text-align: center;
     }

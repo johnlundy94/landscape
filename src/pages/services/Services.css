@@ -3,3 +3,21 @@
     grid-template-columns: repeat(12, 1fr);
     place-content: center;
 }
+
+.service-image {
+    width: 100%; 
+    height: auto;
+    grid-column: 5 / span 4;
+}
+
+.services-title{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    grid-column: span 12;
+    text-align: center;
+}
+
+.services-text {
+    grid-column: 2/ span 10;
+    text-align: left;
+}
