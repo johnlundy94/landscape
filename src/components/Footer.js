@@ -3,9 +3,9 @@ import {
   Container,
   Grid,
   Typography,
-  Link,
   IconButton,
 } from "@mui/material";
+import {Link} from 'react-router-dom'
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -16,17 +16,23 @@ function Footer() {
   return (
     <div className="footer-container">
       <div className="footer-links">
-        <Link href="#" color="inherit" sx={{ marginRight: 2 }}>
-          First Link
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          Home
         </Link>
-        <Link href="#" color="inherit" sx={{ marginRight: 2 }}>
-          Second Link
+        <Link to="/design" style={{ textDecoration: 'none', color: 'inherit' }}>
+          Landscape Design
         </Link>
-        <Link href="#" color="inherit" sx={{ marginRight: 2 }}>
-          Third Link
+        <Link to="/outdoor" style={{ textDecoration: 'none', color: 'inherit' }}>
+          Outdoor Living Spaces
         </Link>
-        <Link href="#" color="inherit">
-          Fourth Link
+        <Link to="/irrigation" style={{ textDecoration: 'none', color: 'inherit' }}>
+          Irrigation
+        </Link>
+        <Link to="/property" style={{ textDecoration: 'none', color: 'inherit' }}>
+          Properties
+        </Link>
+        <Link to="/quote" style={{ textDecoration: 'none', color: 'inherit' }}>
+          Quote
         </Link>
       </div>
       <div className="footer-social">
