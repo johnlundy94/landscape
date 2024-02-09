@@ -11,12 +11,14 @@ import Serenity from "./pages/properties/Serenity"
 import Design from "./pages/services/Design"
 import Irrigation from "./pages/services/Irrigation"
 import Outdoor from "./pages/services/Outdoor"
+import BackToTop from "./components/BackToTop";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
     <ThemeProvider theme={muiTheme}>
+    <BackToTop/>
       <Router>
         <Routes>
         <Route path="/" element={<Home/>}/>

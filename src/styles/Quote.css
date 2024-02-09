@@ -3,3 +3,15 @@
     grid-template-columns: repeat(12, 1fr);
     place-content: center;
 }
+
+.quote-title{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    grid-column: span 12;
+    text-align: center;
+}
+
+.quote-form{
+    grid-column: 2/ span 10;
+    text-align: center;
+}
