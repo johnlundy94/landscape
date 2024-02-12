@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import "../styles/Quote.css";
 import { FormControl, TextField, Button, Checkbox, FormControlLabel, FormGroup, FormLabel } from '@mui/material';
 import Nav from "../components/Nav";
@@ -25,7 +26,7 @@ function Quote() {
       if (type === "checkbox") {
         return {
           ...prevState,
-          services: { ...prevState, [name]: checked }
+          services: { ...prevState.services, [name]: checked }
         };
       }
       return { ...prevState, [name]: value };
@@ -34,6 +35,20 @@ function Quote() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    
+    const apiGatewayUrl = "https://uuqoxt647e.execute-api.us-east-2.amazonaws.com/dev/quote";
+
+    axios.post(apiGatewayUrl, JSON.stringify(formData), {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      console.log("Success: ", response.data);
+    })
+    .catch(error => {
+      console.log("Error: ", error);
+    });
     console.log(formData);
   }
 
@@ -107,7 +122,7 @@ function Quote() {
             label="Project Description"
             variant="outlined"
             name="description"
-            value={formData.desccription}
+            value={formData.description}
             onChange={handleChange}
             multiline
             rows={4}
