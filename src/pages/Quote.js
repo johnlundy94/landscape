@@ -36,7 +36,7 @@ function Quote() {
   const handleSubmit = (event) => {
     event.preventDefault();
     
-    const apiGatewayUrl = "https://uuqoxt647e.execute-api.us-east-2.amazonaws.com/dev/quote";
+    const apiGatewayUrl = process.env.REACT_APP_API_GATEWAY_URL;
 
     axios.post(apiGatewayUrl, JSON.stringify(formData), {
       headers: {
