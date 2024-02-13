@@ -1,7 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import "../styles/Quote.css";
-import { FormControl, TextField, Button, Checkbox, FormControlLabel, FormGroup, FormLabel } from '@mui/material';
+import { Link } from "react-router-dom";
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Button,  FormControl, TextField, Checkbox, FormControlLabel, FormGroup, FormLabel } from '@mui/material';
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
@@ -28,6 +29,8 @@ function Quote() {
     budget: "",
     description: "",
   })
+
+  const [openDialog, setOpenDialog] = useState(false);
 
   const validateEmail = email => {
     const regEmial = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -104,6 +107,21 @@ function Quote() {
     })
     .then(response => {
       console.log("Success: ", response.data);
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        address: "",
+        services: {
+          landscapeDesign: false,
+          outdoorLivingSpaces: false,
+          irrigation: false,
+        },
+        budget: "",
+        description: "",
+      })
+      setOpenDialog(true);
     })
     .catch(error => {
       console.log("Error: ", error);
@@ -114,6 +132,24 @@ function Quote() {
   return (
     <div className="Quote">
       <Nav />
+      <Dialog
+        open={openDialog}
+        onClose={() => setOpenDialog(false)}
+        aria-labelledby="alert-dialog-text"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">{"Submission Successful"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Thank you for your interest! We will reach out shortly!
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button component={Link} to="/" color="primary" autoFocus onClick={() => setOpenDialog(false)}>
+            Go to Home
+          </Button>
+        </DialogActions>
+      </Dialog>
       <h1 className="quote-title">Reach Out To Us!</h1>
       <div className="quote-form">
         <FormControl component="form" onSubmit={handleSubmit} sx={{ m: 4 }} >
