@@ -20,22 +20,81 @@ function Quote() {
     description: "",
   });
 
-  const handleChange = (event) => {
-    const { name, value, checked, type } = event.target;
-    setFormData(prevState => {
-      if (type === "checkbox") {
-        return {
-          ...prevState,
-          services: { ...prevState.services, [name]: checked }
-        };
-      }
-      return { ...prevState, [name]: value };
-    })
+  const [formErrors, setFormErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    budget: "",
+    description: "",
+  })
+
+  const validateEmail = email => {
+    const regEmial = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regEmial.test(email)
   }
+
+  const validatePhone = (phone) => {
+    const regPhone = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    return regPhone.test(phone)
+  }
+
+  const validateField = (name, value) => {
+
+    if (typeof value === "boolean") {
+      return "";
+    }
+
+    switch(name) {
+      case "email":
+        return validateEmail(value) ? "" : "Invalid email format";
+      case "phone":
+        return validatePhone(value) ? "" : "Invalid phone number, please enter 10 digits";
+      default:
+        return value.trim() ? "" : "This field is required";
+    }
+  }
+
+  const handleChange = (event) => {
+    const {name, value, checked, type} = event.target;
+    if (type === "checkbox") {
+      setFormData(prevState => ({
+        ...prevState,
+        services: {
+          ...prevState.services,
+          [name]: checked
+        }
+      }))
+    } else {
+      setFormData(prevState => ({
+        ...prevState,
+        [name]: value,
+      }));
+    }
+    setFormErrors(prevErrors => ({
+      ...prevErrors,
+      [name]: validateField(name, type === "checkbox" ? checked : value),
+    }));
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     
+    const newErrors= Object.keys(formData).reduce((acc, key) => {
+      if (key !== "services") {
+        acc[key] = validateField(key, formData[key]);
+      }
+      return acc;
+    }, {});
+
+    setFormErrors(newErrors);
+
+    const hasErrors = Object.values(newErrors).some(error => error);
+    if(hasErrors) {
+      console.log("Form has errors");
+      return;
+    }
+
     const apiGatewayUrl = process.env.REACT_APP_API_GATEWAY_URL;
 
     axios.post(apiGatewayUrl, JSON.stringify(formData), {
@@ -64,6 +123,8 @@ function Quote() {
             name="name"
             value={formData.name}
             onChange={handleChange}
+            error={!!formErrors.name}
+            helperText={formErrors.name}
             margin="normal"
             fullWidth
           />
@@ -73,6 +134,8 @@ function Quote() {
             name="email"
             value={formData.email}
             onChange={handleChange}
+            error={!!formErrors.email}
+            helperText={formErrors.email}
             margin="normal"
             fullWidth
           />
@@ -82,6 +145,8 @@ function Quote() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
+            error={!!formErrors.phone}
+            helperText={formErrors.phone}
             margin="normal"
             fullWidth
           />
@@ -91,6 +156,8 @@ function Quote() {
             name="address"
             value={formData.address}
             onChange={handleChange}
+            error={!!formErrors.address}
+            helperText={formErrors.address}
             margin="normal"
             fullWidth
           />
@@ -115,6 +182,8 @@ function Quote() {
             name="budget"
             value={formData.budget}
             onChange={handleChange}
+            error={!!formErrors.budget}
+            helperText={formErrors.budget}
             margin="normal"
             fullWidth
           />
@@ -124,6 +193,8 @@ function Quote() {
             name="description"
             value={formData.description}
             onChange={handleChange}
+            error={!!formErrors.description}
+            helperText={formErrors.description}
             multiline
             rows={4}
             margin="normal"
