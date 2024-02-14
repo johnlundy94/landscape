@@ -39,7 +39,7 @@ function Oasis() {
   return (
     <div className="properties-container">
       <Nav />
-      <div className="hero-container">
+      <div className="-container">
         <h1 className="text-span-2">Oasis Estates</h1>
         <div className="slider-container" id="properties" >
           {properties.map((property, index) => (

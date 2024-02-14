@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import "../styles/Hero.css";
+import "../styles/Portfolio.css";
 import SlideComponent from "../api/SlideComponent";
 import landscape1 from "../assets/serenity/serenity1.png";
 import landscape2 from "../assets/elysian/elysian1.png";
@@ -10,7 +10,7 @@ import { Button } from "@mui/material";
 import { Link } from 'react-router-dom'
 
 
-function Hero() {
+function Portfolio() {
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -35,9 +35,9 @@ function Hero() {
   };
 
   return (
-    <div className="hero-container">
+    <div className="portfolio-container" id="properties">
       <h1 className="text-span-2">Our Portfolio</h1>
-      <div className="slider-container" id="properties" >
+      <div className="slider-container" >
         {landscapes.map((landscape, index) => (
           <SlideComponent className="slider" isActive={activeIndex === index} direction="left">
             <img src={landscape.image} alt={`Slide image ${index + 1}`} className="slider-image" />
@@ -66,4 +66,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default Portfolio;

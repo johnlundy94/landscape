@@ -1,4 +1,4 @@
-.hero-container {
+.portfolio-container {
     display: grid;
     gap: .5rem;
     grid-template-columns: repeat(3, 1fr);
@@ -58,7 +58,7 @@
   
 
   @media (min-width: 488px) {
-    .hero-container {
+    .portfolio-container {
       grid-column: 3 / span 8;
     }
     .slider-container{
@@ -72,7 +72,7 @@
   }
 
   @media (min-width: 650px) {
-    .hero-container {
+    .portfolio-container {
       grid-column: 4 / span 6;
     }
     .slider-container{
@@ -87,7 +87,7 @@
 
   
   @media (min-width: 1018px) {
-    .hero-container {
+    .portfolio-container {
       grid-column: 5 / span 4;
     }
     .slider-container{

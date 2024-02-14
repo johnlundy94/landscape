@@ -1,5 +1,5 @@
 import Slide from "@mui/material/Slide";
-import "../styles/Hero.css"
+import "../styles/Portfolio.css"
 
 const SlideComponent = ({ isActive, direction, children }) => {
   return (

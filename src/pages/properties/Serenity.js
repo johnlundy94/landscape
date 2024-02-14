@@ -39,7 +39,7 @@ function Serenity() {
   return (
     <div className="properties-container">
       <Nav />
-      <div className="hero-container">
+      <div className="portfolio-container">
         <h1 className="text-span-2">Serenity Gardens</h1>
         <div className="slider-container" id="properties" >
           {properties.map((property, index) => (
