@@ -1,5 +1,6 @@
 import "../styles/Home.css";
 import Nav from "../components/Nav";
+import Hero from "../components/Hero";
 import Portfolio from "../components/Portfolio";
 import Services from "../components/Services";
 import About from "../components/About";
@@ -10,6 +11,7 @@ function Home() {
   return (
     <div className="Home">
       <Nav />
+      <Hero/>
       <Portfolio/>
       <Services/>
       <About />
