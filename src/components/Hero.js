@@ -1,10 +1,23 @@
 import "../styles/Hero.css";
+import starSVG from '../assets/five-star.svg'; 
 
 function Hero() {
   return (
     <div className="hero-container">
-        <h1 className="hero-title">Landscape Company Name</h1>
-        <p className="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+        <h1 className="hero-title">VistaScapes Landscaping Solutions</h1>
+        <p className="hero-text">VistaScapes Landscaping Solutions brings your vision of outdoor beauty to life, regardless of budget size. We pride ourselves on offering a wide range of landscaping services, from basic lawn care to complete garden overhauls. Our team works diligently to create spaces that enhance your home or business, combining sustainable practices with timeless design. Every project is a partnership with nature, crafted to suit your unique style and preferences.</p>
+        <div className="star1">
+        <img  src={starSVG} alt="Five Star" />
+        <p>Sawyer Residence</p>
+        </div>
+        <div className="star2">
+        <img  src={starSVG} alt="Five Star" />
+        <p>McCarthy Residence</p>
+        </div>
+        <div className="star3">
+        <img  src={starSVG} alt="Five Star" />
+        <p> Hopkins Residence</p>
+        </div>
     </div>
 
   );

@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import LawnMower from '@mui/icons-material/Agriculture';
 import "../styles/Nav.css";
 import { Link } from 'react-router-dom'
 
@@ -37,7 +37,7 @@ function Nav() {
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {/* Logo Picture Desktop */}
-            <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+            <LawnMower sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
             {/* Logo Title Desktop */}
             <Typography
               variant="h6"
@@ -54,13 +54,13 @@ function Nav() {
                 textDecoration: 'none',
               }}
             >
-              LOGO
+              VLS
             </Typography>
           </Box>
 
 
           {/* Logo Picture Phone */}
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <LawnMower sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           {/* Logo Title Phone */}
           <Typography
             variant="h5"
@@ -78,7 +78,7 @@ function Nav() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            VLS
           </Typography>
 
           {/* Hamburger */}
