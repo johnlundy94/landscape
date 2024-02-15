@@ -36,7 +36,7 @@ function Portfolio() {
 
   return (
     <div className="portfolio-container" id="properties">
-      <h1 className="text-span-2">Our Portfolio</h1>
+      <h1 className="portfolio-title">Our Portfolio</h1>
       <div className="slider-container" >
         {landscapes.map((landscape, index) => (
           <SlideComponent className="slider" isActive={activeIndex === index} direction="left">

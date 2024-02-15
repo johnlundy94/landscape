@@ -9,6 +9,7 @@
 }
 
 .services-comp-title {
+    padding-bottom: 20px;
     grid-column: span 3;
     text-align: center;
 }

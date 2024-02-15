@@ -16,9 +16,10 @@
     object-fit: cover;
   }
 
-  .text-span-2 {
+  .portfolio-title {
     text-align: center;
-    grid-column: 2 / span 2;
+    align-items: center;
+    grid-column: span 3;
   }
   
   .slider {
