@@ -8,18 +8,16 @@
   }
 
 .hero-title {
+    font-size: 50px;
     grid-row: 1;
     grid-column: span 2;
     text-align: center;
+    padding-bottom: 30px;
 }
 
 .hero-text {
     grid-row: 2;
-    grid-column: 2;
-}
-.hero-image{
-    width: 100%; 
-    height: auto;
-    grid-row: 2;
-    grid-column: 1;
+    grid-column: span 2;
+    text-align: center;
+    padding-bottom: 210px;
 }
