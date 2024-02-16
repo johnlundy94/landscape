@@ -19,9 +19,7 @@ function CustomCard({ className, image, title, description, link }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">
-          <Link to={link}>Learn More</Link>
-        </Button>
+          <Link to={link} style={{ textDecoration: "none", color: "inherit", paddingLeft: "16px"}}>Learn More</Link>
       </CardActions>
     </Card>
   );

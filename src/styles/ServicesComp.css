@@ -1,28 +1,30 @@
-.services-container{
-    padding-top: 50px;
+.services-comp-container{
     display: grid;
-    gap: .5rem;
+    gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 40px auto;
+    grid-template-rows: 1fr auto auto;
     grid-column: 2 / span 10;
     width: 100%;
 }
 
 .services-comp-title {
-    padding-bottom: 20px;
     grid-column: span 3;
     text-align: center;
+    grid-row: 1;
+    align-self: end; 
 }
 
 .card1 {
     grid-column: 1;
     grid-row: 2;
+    margin-top: 0;
     padding-bottom: 20px;
 }
 
 .card2 {
     grid-column: 2;
     grid-row: 2;
+    margin-top: 0;
     padding-bottom: 20px;
 }
 
@@ -34,7 +36,7 @@
 
 
 @media (max-width: 1252px) {
-    .services-container {
+    .services-comp-container {
         grid-template-columns: repeat(6, auto);
         grid-template-rows: 10% auto auto;
     }
@@ -57,9 +59,15 @@
   }
 
   @media (max-width: 870px) {
-    .services-container {
+    .services-comp-container {
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
+    }
+
+    .services-comp-title {
+        width: 100%;
+        padding-top: 50px;
     }
   }

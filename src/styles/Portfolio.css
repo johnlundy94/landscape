@@ -14,6 +14,7 @@
     width: 100%; 
     height: 70vh; 
     object-fit: cover;
+    border-radius: 30px; 
   }
 
   .portfolio-title {
@@ -32,7 +33,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-
+    border-radius: 30px; 
   }
 
   .slider-buttons {
@@ -40,23 +41,30 @@
     text-align: center;
   }
 
-  .slider-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-
-  .slide-text {
+  .slider-text {
+    grid-column: span 3;
+    grid-row: 1;
+    grid-template-columns: repeat(3, auto);
+    text-align: center;
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    color: #fff; /* White text color */
-    padding: 20px; /* Adjust padding as needed */
+    background: linear-gradient(to top, #272727 50%, rgba(39, 39, 39, 0) 100%);
+    height: 20%;
+    color: #fff; 
     text-align: center;
-    box-sizing: border-box;
+    border-radius: 30px; 
+  }
+
+  .slider-name {
+    font-size: 25px;
+    grid-column: 1;
   }
   
+  
+  .slider-link {
+    grid-column: 3;
+  }
 
   @media (min-width: 488px) {
     .portfolio-container {

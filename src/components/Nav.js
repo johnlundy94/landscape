@@ -119,7 +119,7 @@ function Nav() {
                 return (
                   <MenuItem key={page.name} onClick={handleCloseNavMenu}>
                     {page.type === "link" ? (
-                      <Link to={page.path} style={{ textDecoration: "none", color: "inherit" }}>
+                      <Link to={page.path} style={{ textDecoration: "none", color: "#272727" }}>
                         {menuItemContent}
                       </Link>
                     ) : (

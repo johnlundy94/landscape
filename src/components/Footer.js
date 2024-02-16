@@ -16,36 +16,36 @@ function Footer() {
   return (
     <div className="footer-container">
       <div className="footer-links">
-        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link to="/" style={{ textDecoration: 'none', color: '#fbfbfb', padding: 10}}>
           Home
         </Link>
-        <Link to="/design" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link to="/design" style={{ textDecoration: 'none', color: '#fbfbfb', padding: 10 }}>
           Landscape Design
         </Link>
-        <Link to="/outdoor" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link to="/outdoor" style={{ textDecoration: 'none', color: '#fbfbfb', padding: 10 }}>
           Outdoor Living Spaces
         </Link>
-        <Link to="/irrigation" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link to="/irrigation" style={{ textDecoration: 'none', color: '#fbfbfb', padding: 10 }}>
           Irrigation
         </Link>
-        <Link to="/property" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link to="/property" style={{ textDecoration: 'none', color: '#fbfbfb', padding: 10 }}>
           Properties
         </Link>
-        <Link to="/quote" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link to="/quote" style={{ textDecoration: 'none', color: '#fbfbfb', padding: 10 }}>
           Quote
         </Link>
       </div>
       <div className="footer-social">
-        <IconButton color="inherit" href="https://facebook.com">
+        <IconButton color="#fbfbfb" href="https://facebook.com">
           <FacebookIcon />
         </IconButton>
-        <IconButton color="inherit" href="https://twitter.com">
+        <IconButton color="#fbfbfb" href="https://twitter.com">
           <TwitterIcon />
         </IconButton>
-        <IconButton color="inherit" href="https://instagram.com">
+        <IconButton color="#fbfbfb" href="https://instagram.com">
           <InstagramIcon />
         </IconButton>
-        <IconButton color="inherit" href="https://linkedin.com">
+        <IconButton color="#fbfbfb" href="https://linkedin.com">
           <LinkedInIcon />
         </IconButton>
       </div>

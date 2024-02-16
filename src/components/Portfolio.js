@@ -15,11 +15,11 @@ function Portfolio() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const landscapes = [
-    {name: 'Serenity Gardens', image: landscape1, link: '/serenity'},
-    {name: 'Elysian Fields',image: landscape2, link: "/elysian"},
-    {name: 'Arcadian Retreat',image: landscape3, link: "/arcadian"},
-    {name: 'Eden Enclave',image: landscape4, link: '/eden'},
-    {name: 'Oasis Estates',image: landscape5, link: '/oasis'},
+    { name: 'Serenity Gardens', image: landscape1, link: '/serenity' },
+    { name: 'Elysian Fields', image: landscape2, link: "/elysian" },
+    { name: 'Arcadian Retreat', image: landscape3, link: "/arcadian" },
+    { name: 'Eden Enclave', image: landscape4, link: '/eden' },
+    { name: 'Oasis Estates', image: landscape5, link: '/oasis' },
   ];
 
   const nextSlide = () => {
@@ -41,16 +41,18 @@ function Portfolio() {
         {landscapes.map((landscape, index) => (
           <SlideComponent className="slider" isActive={activeIndex === index} direction="left">
             <img src={landscape.image} alt={`Slide image ${index + 1}`} className="slider-image" />
-            <div className="slide-text">
-            {landscape.name}
-              <Button
-                key={index + 1}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                <Link to={landscape.link} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  {"view property"}
-                </Link>
-              </Button></div>
+            <div className="slider-text">
+              <div className="slider-name">
+                {landscape.name}
+              </div>
+              <div className="slider-link">
+
+                  <Link to={landscape.link} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    {"VIEW PROPERTY"}
+                  </Link>
+
+              </div>
+            </div>
           </SlideComponent>
         ))}
       </div>

@@ -41,7 +41,7 @@ function Oasis() {
       <Nav />
       <div className="-container">
         <h1 className="text-span-2">Oasis Estates</h1>
-        <div className="slider-container" id="properties" >
+        <div className="portfolio-slider-container" id="properties" >
           {properties.map((property, index) => (
             <SlideComponent className="slider" isActive={activeIndex === index} direction="left">
               <img src={property.image} alt={`Slide image ${index + 1}`} className="slider-image" />
