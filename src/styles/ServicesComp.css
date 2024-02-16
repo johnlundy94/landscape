@@ -5,6 +5,7 @@
     grid-template-rows: 1fr auto auto;
     grid-column: 2 / span 10;
     width: 100%;
+    padding-top: 50px;
 }
 
 .services-comp-title {
@@ -37,6 +38,7 @@
 
 @media (max-width: 1252px) {
     .services-comp-container {
+        padding-top: 0px;
         grid-template-columns: repeat(6, auto);
         grid-template-rows: 10% auto auto;
     }

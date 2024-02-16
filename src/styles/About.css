@@ -20,8 +20,8 @@
     z-index: 2;
     grid-row: 2 / span 4;
     grid-column: 8 / span 4;
-    margin-top: 50pxpx;
-    margin-bottom: 50px;
+    margin-top: 175px;
+    margin-bottom: 175px;
 }
 
 .man{
@@ -45,16 +45,16 @@
 
 @media (max-width: 1381px) {
     .about-card {
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin-top: 100px;
+        margin-bottom: 100px;
         grid-column: 8 / span 6;
     }
   }
 
   @media (max-width: 1146px) {
     .about-card {
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin-top: 100px;
+        margin-bottom: 100px;
         grid-column: 8 / span 6;
     }
   }
