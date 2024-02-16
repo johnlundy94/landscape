@@ -18,20 +18,16 @@ function About() {
             component="div"
             className="color"
           >
-            Meet Name
+            Our Story
           </Typography>
           <Typography
             className="about-sub-text"
             variant="body2"
             color="text.secondary"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Verdant Valley Landscaping began as the vision of a single entrepreneur, Alex Green. With a passion for transforming outdoor spaces and a commitment to sustainable practices, Alex established the company in the heart of Colorado. His goal was simple: to blend creative landscaping solutions with eco-friendly techniques, making every project a testament to nature's beauty and resilience.
+            <br />
+            From humble beginnings, Verdant Valley quickly grew, thanks to a reputation for reliability, innovation, and meticulous attention to detail. Each project, whether a quaint backyard garden or a sprawling corporate green space, was infused with Alex's personal touch and environmental ethos. The company became known not just for the aesthetics of its designs, but for fostering vibrant, green communities.
           </Typography>
         </CardContent>
       </Card>

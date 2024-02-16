@@ -1,21 +1,21 @@
 const testimonialsData = [
   {
     id: 1,
-    customer: "Customer Name",
+    customer: "Sawyer Residence",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas pharetra convallis posuere morbi leo urna molestie at elementum. Auctor elit sed vulputate mi sit amet mauris commodo. Duis ultricies lacus sed turpis tincidunt id. Augue lacus viverra vitae congue eu.",
+      "The transformation of our backyard was nothing short of magical. Alex and his team at Verdant Valley Landscaping worked with us to create a sustainable oasis. Their attention to detail and dedication to eco-friendly practices were evident. Our garden is now not only beautiful but also a haven for local wildlife. We couldn't be happier!",
   },
   {
     id: 2,
-    customer: "Customer Name",
+    customer: "McCarthy Residence",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas pharetra convallis posuere morbi leo urna molestie at elementum. Auctor elit sed vulputate mi sit amet mauris commodo. Duis ultricies lacus sed turpis tincidunt id. Augue lacus viverra vitae congue eu.",
+      "We tasked Verdant Valley with the challenge of designing a low-maintenance yet elegant landscape for our front yard. They exceeded our expectations! The design was thoughtful, and the execution was flawless. Our neighbors are constantly complimenting us on the improvement. Thank you, Verdant Valley!",
   },
   {
     id: 3,
-    customer: "Customer Name",
+    customer: "Hopkins Residence",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas pharetra convallis posuere morbi leo urna molestie at elementum. Auctor elit sed vulputate mi sit amet mauris commodo. Duis ultricies lacus sed turpis tincidunt id. Augue lacus viverra vitae congue eu.",
+      "Choosing Verdant Valley Landscaping for our property overhaul was the best decision we could have made. Alex's vision for our outdoor space has added immense value to our property. The team's professionalism and skill were unparalleled, and the result is a stunning, serene space that we enjoy every day",
   },
 ];
 

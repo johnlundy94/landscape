@@ -12,6 +12,7 @@ import Design from "./pages/services/Design"
 import Irrigation from "./pages/services/Irrigation"
 import Outdoor from "./pages/services/Outdoor"
 import BackToTop from "./components/BackToTop";
+import ToQuote from "./components/ToQuote";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     <ThemeProvider theme={muiTheme}>
     <BackToTop/>
       <Router>
+      <ToQuote/>
         <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/outdoor" element={<Outdoor/>}/>

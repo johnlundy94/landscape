@@ -20,8 +20,8 @@
     z-index: 2;
     grid-row: 2 / span 4;
     grid-column: 8 / span 4;
-    margin-top: 200px;
-    margin-bottom: 200px;
+    margin-top: 50pxpx;
+    margin-bottom: 50px;
 }
 
 .man{
@@ -45,25 +45,25 @@
 
 @media (max-width: 1381px) {
     .about-card {
-        margin-top: 150px;
-        margin-bottom: 150px;
-        grid-column: 8 / span 5;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        grid-column: 8 / span 6;
     }
   }
 
   @media (max-width: 1146px) {
     .about-card {
-        margin-top: 100px;
-        margin-bottom: 100px;
-        grid-column: 8 / span 5;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        grid-column: 8 / span 6;
     }
   }
 
   @media (max-width: 1034px) {
     .about-card {
-        margin-top: 50px;
-        margin-bottom: 50px;
-        grid-column: 8 / span 5;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        grid-column: 8 / span 7;
     }
   }
 
@@ -78,9 +78,8 @@
         grid-column: 3 / span 6;
     }
     .about-card {
-        margin-top: 50px;
-        margin-bottom: 50px;
         grid-column: 8 / span 5;
+        padding-bottom: 15px;
     }
   }
 
