@@ -8,6 +8,7 @@
     width: 100%; 
     height: auto;
     grid-column: 5 / span 4;
+    border-radius: 30px; 
 }
 
 .services-title{
@@ -20,4 +21,8 @@
 .services-text {
     grid-column: 2/ span 10;
     text-align: left;
+}
+
+.dropdown{
+    grid-column: 2 / span 2;
 }

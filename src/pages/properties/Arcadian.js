@@ -9,11 +9,9 @@ import arcadian5 from "../../assets/arcadian/arcadian5.png";
 import { Button } from "@mui/material";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
-
-
+import PropertyDropDown from "../../components/PropertyDropDown";
 
 function Arcadian() {
-
   const [activeIndex, setActiveIndex] = useState(0);
 
   const properties = [
@@ -40,11 +38,20 @@ function Arcadian() {
     <div className="properties-container">
       <Nav />
       <div className="portfolio-container">
+        <PropertyDropDown />
         <h1 className="text-span-2">Arcadian Retreat</h1>
-        <div className="portfolio-slider-container" id="properties" >
+        <div className="portfolio-slider-container" id="properties">
           {properties.map((property, index) => (
-            <SlideComponent className="slider" isActive={activeIndex === index} direction="left">
-              <img src={property.image} alt={`Slide image ${index + 1}`} className="slider-image" />
+            <SlideComponent
+              className="slider"
+              isActive={activeIndex === index}
+              direction="left"
+            >
+              <img
+                src={property.image}
+                alt={`Slide image ${index + 1}`}
+                className="slider-image"
+              />
             </SlideComponent>
           ))}
         </div>
@@ -59,7 +66,19 @@ function Arcadian() {
       </div>
       <h1 className="property-title">Project Overview</h1>
       <p className="property-text">
-      Our latest landscape project marries the rustic charm of a natural sanctuary with the refined beauty of a cultivated garden. We've composed a tableau that respects the local ecosystem while introducing elements of classic design. Meandering flagstone paths invite leisurely strolls through diverse plantings, where native species mingle with selected perennials for year-round color and texture. Water features, from babbling brooks to still ponds, serve as serene focal points, inviting local wildlife and providing a soothing soundtrack to the garden's ambience. At dusk, strategically placed lighting transforms the space into a nocturnal wonderland, emphasizing the silhouettes and forms of the diverse flora. This landscape is not just a visual feast but an homage to the symbiotic relationship between human touch and nature's hand.
+        Our latest landscape project marries the rustic charm of a natural
+        sanctuary with the refined beauty of a cultivated garden. We've composed
+        a tableau that respects the local ecosystem while introducing elements
+        of classic design. Meandering flagstone paths invite leisurely strolls
+        through diverse plantings, where native species mingle with selected
+        perennials for year-round color and texture. Water features, from
+        babbling brooks to still ponds, serve as serene focal points, inviting
+        local wildlife and providing a soothing soundtrack to the garden's
+        ambience. At dusk, strategically placed lighting transforms the space
+        into a nocturnal wonderland, emphasizing the silhouettes and forms of
+        the diverse flora. This landscape is not just a visual feast but an
+        homage to the symbiotic relationship between human touch and nature's
+        hand.
       </p>
       <Footer />
     </div>
