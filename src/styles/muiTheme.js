@@ -14,12 +14,22 @@ const muiTheme = createTheme({
     },
   },
   components: {
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: "rgba(255, 255, 255, 0.2)",
+          backdropFilter: "blur(5px)",
+          boxShadow: "none",
+          border: "1px solid rgba(255, 255, 255, 0.3)",
+        },
+      },
+    },
     MuiFormLabel: {
       styleOverrides: {
         root: {
-          color: "#fbfbfb", // Label color when not focused
+          color: "#fbfbfb",
           "&.Mui-focused": {
-            color: "#fbfbfb !important", // Make sure this overrides other styles
+            color: "#fbfbfb !important",
           },
         },
       },
@@ -27,10 +37,8 @@ const muiTheme = createTheme({
     MuiInputLabel: {
       styleOverrides: {
         root: {
-          // Label color when not focused
           color: "#fbfbfb",
           "&.Mui-focused": {
-            // Label color when focused
             color: "#fbfbfb",
           },
         },
@@ -40,13 +48,13 @@ const muiTheme = createTheme({
       styleOverrides: {
         root: {
           "& .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#fbfbfb", // Change the border color
+            borderColor: "#fbfbfb",
           },
           "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#fbfbfb", // Change the border color on hover
+            borderColor: "#fbfbfb",
           },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#fbfbfb", // Change the border color when focused
+            borderColor: "#fbfbfb",
           },
         },
       },
@@ -54,9 +62,9 @@ const muiTheme = createTheme({
     MuiCheckbox: {
       styleOverrides: {
         root: {
-          color: "#fbfbfb", // Set the default color for the checkbox
+          color: "#fbfbfb",
           "&.Mui-checked": {
-            color: "#fbfbfb", // Ensure the checkbox color remains the same when checked
+            color: "#fbfbfb",
           },
         },
       },

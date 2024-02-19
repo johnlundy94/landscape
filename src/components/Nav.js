@@ -64,7 +64,7 @@ function Nav() {
                 textDecoration: "none",
               }}
             >
-              Verdant
+              VVL
             </Typography>
           </Box>
 
@@ -87,7 +87,7 @@ function Nav() {
               textDecoration: "none",
             }}
           >
-            Verdant
+            VVL
           </Typography>
 
           {/* Hamburger */}
