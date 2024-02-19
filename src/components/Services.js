@@ -5,7 +5,9 @@ import servicesData from "../data/servicesData";
 function Services() {
   return (
     <div className="services-comp-container" id="services">
-      <h1 className="services-comp-title" id="services" >Services Offered</h1>
+      <h1 className="services-comp-title" id="services">
+        Services Offered
+      </h1>
       {servicesData.map((service, index) => (
         <CustomCard
           key={service.id}

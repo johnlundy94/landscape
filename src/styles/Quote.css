@@ -1,3 +1,15 @@
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
 .Quote {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -12,6 +24,7 @@
 }
 
 .quote-form{
+    animation: 1s ease-out 0s 1 slideInFromLeft;
     grid-column: 2/ span 10;
     text-align: center;
 }

@@ -1,3 +1,14 @@
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+  }
+
 .Services {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -9,6 +20,7 @@
     height: 50vh;
     grid-column: 5 / span 4;
     border-radius: 30px; 
+    animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 .services-title{
@@ -16,15 +28,18 @@
     padding-bottom: 20px;
     grid-column: span 12;
     text-align: center;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 .services-text {
     grid-column: 2/ span 10;
     text-align: left;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 .dropdown{
     grid-column: 2 / span 2;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
   

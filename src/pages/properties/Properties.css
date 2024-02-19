@@ -1,3 +1,14 @@
+@keyframes slideInFromLeft {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
 .properties-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -56,11 +67,13 @@
     padding-bottom: 20px;
     grid-column: span 12;
     text-align: center;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
 } 
 
 .property-text {
   grid-column: 2/ span 10;
   text-align: left;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
 } 
 
   @media (min-width: 488px) {
