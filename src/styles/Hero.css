@@ -1,4 +1,16 @@
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 .hero-container {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
     display: grid;
     gap: .5rem;
     grid-template-columns: repeat(3, 1fr);
@@ -8,7 +20,7 @@
   }
 
 .hero-title {
-    font-size: 30px;
+    font-size: 40px;
     grid-row: 1;
     grid-column: span 3;
     text-align: center;
@@ -17,7 +29,7 @@
 }
 
 .hero-text {
-    font-size: 15px;
+    font-size: 20px;
     grid-row: 2;
     grid-column: span 3;
     text-align: center;
