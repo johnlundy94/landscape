@@ -14,6 +14,16 @@ const muiTheme = createTheme({
     },
   },
   components: {
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          color: "#fbfbfb", // Label color when not focused
+          "&.Mui-focused": {
+            color: "#fbfbfb !important", // Make sure this overrides other styles
+          },
+        },
+      },
+    },
     MuiInputLabel: {
       styleOverrides: {
         root: {

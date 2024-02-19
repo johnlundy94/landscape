@@ -277,6 +277,7 @@ function Quote() {
             rows={4}
             margin="normal"
             fullWidth
+            className="description-textfield"
           />
           <Button
             type="submit"
