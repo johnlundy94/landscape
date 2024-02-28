@@ -29,19 +29,18 @@
     text-align: center;
 }
 
-/* Media query for screens that are 1200px or wider */
 @media (min-width: 1200px) {
     .quote-form {
-        grid-column: 5 / span 4; /* Adjust to span from column 3 to 11 */
-        display: flex; /* Use flexbox layout */
-        flex-direction: row; /* Arrange children in a row */
-        flex-wrap: wrap; /* Wrap items to next line if needed */
-        justify-content: space-between; /* Distribute space between items */
+        grid-column: 5 / span 4;
+        display: flex; 
+        flex-direction: row;
+        flex-wrap: wrap; 
+        justify-content: space-between;
     }
 
     .quote-form .MuiFormControl-root {
-        flex: 1; /* Make form controls flexible */
-        min-width: 200px; /* Minimum width of each form control */
-        margin: 8px; /* Margin around form controls */
+        flex: 1;
+        min-width: 200px;
+        margin: 8px;
     }
 }
