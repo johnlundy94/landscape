@@ -10,12 +10,14 @@
 }
 
 .hero-container {
+    padding-top: 50px;
+    padding-bottom: 250px;
     animation: 1s ease-out 0s 1 slideInFromLeft;
     display: grid;
     gap: .5rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, auto);
-    grid-column: 2 / span 10;
+    grid-column: 3 / span 8;
     max-width: 100%;
   }
 
