@@ -1,120 +1,130 @@
-.portfolio-container {
-    display: grid;
-    gap: .5rem;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 40px auto;
-    grid-column: 7 / span 5;
-    max-width: 100%;
+@keyframes fade {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  .slider-container{
+.portfolio-container {
+  animation: fade linear both;
+  animation-timeline: view();
+  animation-range: entry 40% cover 40%;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 40px auto;
+  grid-column: 7 / span 5;
+  max-width: 100%;
+}
+
+.slider-container {
+  grid-column: span 3;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.portfolio-title {
+  text-align: center;
+  align-items: center;
+  grid-column: span 3;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.slider-buttons {
+  grid-column: span 3;
+  text-align: center;
+}
+
+.slider-text {
+  grid-column: span 3;
+  grid-row: 1;
+  grid-template-columns: repeat(3, auto);
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, #272727 50%, rgba(39, 39, 39, 0) 100%);
+  height: 20%;
+  color: #fff;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.slider-name {
+  font-size: 25px;
+  grid-column: 1;
+}
+
+.slider-link {
+  grid-column: 3;
+}
+
+@media (min-width: 488px) {
+  .portfolio-container {
+    grid-column: 3 / span 8;
+  }
+  .slider-container {
     grid-column: span 3;
     position: relative;
-    overflow: hidden; 
-    width: 100%; 
-    height: 50vh; 
+    overflow: hidden;
+    width: 100%;
+    height: 50vh;
     object-fit: cover;
-    border-radius: 30px; 
   }
+}
 
-  .portfolio-title {
-    text-align: center;
-    align-items: center;
+@media (min-width: 650px) {
+  .portfolio-container {
+    grid-column: 4 / span 6;
+  }
+  .slider-container {
     grid-column: span 3;
-  }
-  
-  .slider {
-    position: absolute;
-    width: 100%; 
-    height: 100%;
-  }
-
-  .slider-image {
-    position: absolute;
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    height: 100%;
-    border-radius: 30px; 
+    height: 50vh;
+    object-fit: cover;
   }
+}
 
-  .slider-buttons {
-    grid-column: span 3;
-    text-align: center;
+@media (min-width: 1018px) {
+  .portfolio-container {
+    grid-column: 5 / span 4;
   }
-
-  .slider-text {
+  .slider-container {
     grid-column: span 3;
-    grid-row: 1;
-    grid-template-columns: repeat(3, auto);
-    text-align: center;
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    background: linear-gradient(to top, #272727 50%, rgba(39, 39, 39, 0) 100%);
-    height: 20%;
-    color: #fff; 
-    text-align: center;
-    border-radius: 30px; 
+    height: 50vh;
+    object-fit: cover;
   }
-
-  .slider-name {
-    font-size: 25px;
-    grid-column: 1;
+}
+@media (max-width: 2000px) {
+  .slider-container {
+    grid-column: span 3;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
   }
-  
-  
-  .slider-link {
-    grid-column: 3;
-  }
-
-  @media (min-width: 488px) {
-    .portfolio-container {
-      grid-column: 3 / span 8;
-    }
-    .slider-container{
-      grid-column: span 3;
-      position: relative;
-      overflow: hidden; 
-      width: 100%; 
-      height: 50vh; 
-      object-fit: cover;
-    }
-  }
-
-  @media (min-width: 650px) {
-    .portfolio-container {
-      grid-column: 4 / span 6;
-    }
-    .slider-container{
-      grid-column: span 3;
-      position: relative;
-      overflow: hidden; 
-      width: 100%; 
-      height: 50vh; 
-      object-fit: cover;
-    }
-  }
-
-  
-  @media (min-width: 1018px) {
-    .portfolio-container {
-      grid-column: 5 / span 4;
-    }
-    .slider-container{
-      grid-column: span 3;
-      position: relative;
-      overflow: hidden; 
-      width: 100%; 
-      height: 50vh; 
-      object-fit: cover;
-    }
-  }
-  @media (max-width: 2000px) {
-    .slider-container{
-      grid-column: span 3;
-      position: relative;
-      overflow: hidden; 
-      width: 100%; 
-      height: 50vh; 
-      object-fit: cover;
-    }
-  }
+}
