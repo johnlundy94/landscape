@@ -18,6 +18,7 @@ import {
 } from "@mui/material";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { v4 as uuidv4 } from "uuid";
 
 function Quote() {
   const [formData, setFormData] = useState({
@@ -113,10 +114,16 @@ function Quote() {
       return;
     }
 
+    const uniqueId = uuidv4();
+    const quoteWithUniqueId = {
+      ...formData,
+      id: uniqueId,
+    };
+
     const apiGatewayUrl = process.env.REACT_APP_API_GATEWAY_URL;
 
     axios
-      .post(apiGatewayUrl, JSON.stringify(formData), {
+      .post(apiGatewayUrl, JSON.stringify(quoteWithUniqueId), {
         headers: {
           "Content-Type": "application/json",
         },
@@ -142,7 +149,7 @@ function Quote() {
       .catch((error) => {
         console.log("Error: ", error);
       });
-    console.log(formData);
+    console.log(quoteWithUniqueId);
   };
 
   return (
