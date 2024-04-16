@@ -1,5 +1,4 @@
-import { useState } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
 import "../styles/Quote.css";
 import { Link } from "react-router-dom";
 import {
@@ -18,7 +17,6 @@ import {
 } from "@mui/material";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import { v4 as uuidv4 } from "uuid";
 
 function Quote() {
   const [formData, setFormData] = useState({
@@ -44,7 +42,10 @@ function Quote() {
     description: "",
   });
 
-  const [openDialog, setOpenDialog] = useState(false);
+  const [ws, setWs] = useState(null);
+  const [openSuccessDialog, setOpenSuccessDialog] = useState(false);
+  const [openErrorDialog, setOpenErrorDialog] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const validateEmail = (email) => {
     const regEmial =
@@ -74,6 +75,39 @@ function Quote() {
     }
   };
 
+  useEffect(() => {
+    const webSocket = new WebSocket(process.env.REACT_APP_WS_API_GATEWAY_URL);
+
+    webSocket.onopen = (event) => {
+      console.log("WebSocket connection established", event);
+    };
+
+    webSocket.onerror = (event) => {
+      console.error("WebSocket error observed:", event);
+    };
+
+    webSocket.onmessage = (event) => {
+      console.log("Message received", event.data);
+      const message = JSON.parse(event.data);
+      if (message.error) {
+        setErrorMessage(message.error);
+        setOpenErrorDialog(true);
+      } else if (message.quote) {
+        setOpenSuccessDialog(true);
+      }
+    };
+
+    setWs(webSocket);
+
+    // Only close WebSocket when the component is unmounted
+    return () => {
+      if (webSocket.readyState === WebSocket.OPEN) {
+        console.log("Closing WebSocket");
+        webSocket.close();
+      }
+    };
+  }, []);
+
   const handleChange = (event) => {
     const { name, value, checked, type } = event.target;
     if (type === "checkbox") {
@@ -98,66 +132,31 @@ function Quote() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const hasErrors = Object.values(formErrors).some((error) => error);
 
-    const newErrors = Object.keys(formData).reduce((acc, key) => {
-      if (key !== "services") {
-        acc[key] = validateField(key, formData[key]);
+    if (!hasErrors && ws && ws.readyState === WebSocket.OPEN) {
+      ws.send(
+        JSON.stringify({
+          action: "postQuote",
+          data: formData,
+        })
+      );
+    } else {
+      if (hasErrors) {
+        setErrorMessage("Please correct the errors in the form.");
+      } else {
+        setErrorMessage("WebSocket connection is not open.");
       }
-      return acc;
-    }, {});
-
-    setFormErrors(newErrors);
-
-    const hasErrors = Object.values(newErrors).some((error) => error);
-    if (hasErrors) {
-      console.log("Form has errors");
-      return;
+      setOpenErrorDialog(true);
     }
-
-    const uniqueId = uuidv4();
-    const quoteWithUniqueId = {
-      ...formData,
-      id: uniqueId,
-    };
-
-    const apiGatewayUrl = process.env.REACT_APP_API_GATEWAY_URL;
-
-    axios
-      .post(apiGatewayUrl, JSON.stringify(quoteWithUniqueId), {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then((response) => {
-        console.log("Success: ", response.data);
-
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          address: "",
-          services: {
-            landscapeDesign: false,
-            outdoorLivingSpaces: false,
-            irrigation: false,
-          },
-          budget: "",
-          description: "",
-        });
-        setOpenDialog(true);
-      })
-      .catch((error) => {
-        console.log("Error: ", error);
-      });
-    console.log(quoteWithUniqueId);
   };
 
   return (
     <div className="Quote">
       <Nav />
       <Dialog
-        open={openDialog}
-        onClose={() => setOpenDialog(false)}
+        open={openSuccessDialog}
+        onClose={() => setOpenSuccessDialog(false)}
         aria-labelledby="alert-dialog-text"
         aria-describedby="alert-dialog-description"
       >
@@ -175,12 +174,29 @@ function Quote() {
             to="/"
             color="primary"
             autoFocus
-            onClick={() => setOpenDialog(false)}
+            onClick={() => setOpenSuccessDialog(false)}
           >
             Go to Home
           </Button>
         </DialogActions>
       </Dialog>
+
+      <Dialog open={openErrorDialog} onClose={() => setOpenErrorDialog(false)}>
+        <DialogTitle>{"Error Submitting Quote"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText>{errorMessage}</DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            onClick={() => setOpenErrorDialog(false)}
+            color="primary"
+            autoFocus
+          >
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
+
       <h1 className="quote-title">Reach Out To Us!</h1>
       <div className="quote-form">
         <FormControl component="form" onSubmit={handleSubmit} sx={{ m: 4 }}>
