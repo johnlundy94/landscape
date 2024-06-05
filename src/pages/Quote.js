@@ -17,6 +17,7 @@ import {
 } from "@mui/material";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import WebSocketManager from "../WebSocketManager";
 
 function Quote() {
   const [formData, setFormData] = useState({
@@ -42,15 +43,14 @@ function Quote() {
     description: "",
   });
 
-  const [ws, setWs] = useState(null);
   const [openSuccessDialog, setOpenSuccessDialog] = useState(false);
   const [openErrorDialog, setOpenErrorDialog] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const validateEmail = (email) => {
-    const regEmial =
-      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return regEmial.test(email);
+    const regEmail =
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regEmail.test(email);
   };
 
   const validatePhone = (phone) => {
@@ -76,35 +76,18 @@ function Quote() {
   };
 
   useEffect(() => {
-    const webSocket = new WebSocket(process.env.REACT_APP_WS_API_GATEWAY_URL);
-
-    webSocket.onopen = (event) => {
-      console.log("WebSocket connection established", event);
-    };
-
-    webSocket.onerror = (event) => {
-      console.error("WebSocket error observed:", event);
-    };
-
-    webSocket.onmessage = (event) => {
-      console.log("Message received", event.data);
-      const message = JSON.parse(event.data);
+    WebSocketManager.setOnMessage((message) => {
+      console.log("Message received", message);
       if (message.error) {
         setErrorMessage(message.error);
         setOpenErrorDialog(true);
       } else if (message.quote) {
         setOpenSuccessDialog(true);
       }
-    };
+    });
 
-    setWs(webSocket);
-
-    // Only close WebSocket when the component is unmounted
     return () => {
-      if (webSocket.readyState === WebSocket.OPEN) {
-        console.log("Closing WebSocket");
-        webSocket.close();
-      }
+      WebSocketManager.close();
     };
   }, []);
 
@@ -134,19 +117,13 @@ function Quote() {
     event.preventDefault();
     const hasErrors = Object.values(formErrors).some((error) => error);
 
-    if (!hasErrors && ws && ws.readyState === WebSocket.OPEN) {
-      ws.send(
-        JSON.stringify({
-          action: "postQuote",
-          data: formData,
-        })
-      );
+    if (!hasErrors) {
+      WebSocketManager.sendMessage({
+        action: "postQuote",
+        data: formData,
+      });
     } else {
-      if (hasErrors) {
-        setErrorMessage("Please correct the errors in the form.");
-      } else {
-        setErrorMessage("WebSocket connection is not open.");
-      }
+      setErrorMessage("Please correct the errors in the form.");
       setOpenErrorDialog(true);
     }
   };
