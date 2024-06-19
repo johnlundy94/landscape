@@ -56,8 +56,8 @@ class WebSocketManager {
   }
 }
 
-const instance = new WebSocketManager(
-  "wss://sp8bz6x76k.execute-api.us-east-2.amazonaws.com/dev/"
-);
+const websocketUrl = process.env.REACT_APP_WS_API_GATEWAY_URL;
+
+const instance = new WebSocketManager(websocketUrl);
 
 export default instance;
