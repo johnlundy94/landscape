@@ -22,19 +22,43 @@ const pages = [
 ];
 
 function Nav() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [menuAnchor, setMenuAnchor] = React.useState(null);
 
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+    setMenuAnchor(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+    setMenuAnchor(null);
   };
 
-  const isHome = location.pathname === "/";
+  const isHome = pathname === "/";
+
+  const renderNavItem = (page) => (
+    <Button
+      key={page.name}
+      onClick={handleCloseNavMenu}
+      sx={{ my: 2, color: "white", display: "block" }}
+    >
+      {page.type === "link" ? (
+        <Link
+          to={page.path}
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          {page.name}
+        </Link>
+      ) : (
+        <a
+          href={`#${page.anchor}`}
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          {page.name}
+        </a>
+      )}
+    </Button>
+  );
 
   return (
     <AppBar
@@ -69,29 +93,38 @@ function Nav() {
           </Box>
 
           {/* Logo Picture Phone */}
-          <LawnMower sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          {/* Logo Title Phone */}
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
+          <Box
             sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
+              display: { xs: "flex", md: "none" },
+              alignItems: "center",
             }}
           >
-            VVL
-          </Typography>
-
+            <LawnMower sx={{ mr: 1 }} />
+            {/* Logo Title Phone */}
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              href="/"
+              sx={{
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              VVL
+            </Typography>
+          </Box>
           {/* Hamburger */}
-          <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              flexGrow: 0,
+              display: { xs: "flex", md: "none" },
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -104,75 +137,29 @@ function Nav() {
             </IconButton>
             <Menu
               id="menu-appbar"
-              anchorEl={anchorElNav}
+              anchorEl={menuAnchor}
               anchorOrigin={{
                 vertical: "bottom",
-                horizontal: "left",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
                 vertical: "top",
-                horizontal: "left",
+                horizontal: "right",
               }}
-              open={Boolean(anchorElNav)}
+              open={Boolean(menuAnchor)}
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => {
-                const menuItemContent = (
-                  <Typography textAlign="center">{page.name}</Typography>
-                );
-
-                return (
-                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                    {isHome || page.type === "link" ? (
-                      <Link
-                        to={page.path}
-                        style={{ textDecoration: "none", color: "#272727" }}
-                      >
-                        {menuItemContent}
-                      </Link>
-                    ) : (
-                      <a
-                        href={`#${page.anchor}`}
-                        style={{ textDecoration: "none", color: "inherit" }}
-                      >
-                        {menuItemContent}
-                      </a>
-                    )}
-                  </MenuItem>
-                );
-              })}
+              {pages.map(renderNavItem)}
             </Menu>
           </Box>
 
           {/* Nav links desktop */}
           <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page.name}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {isHome || page.type === "link" ? (
-                  <Link
-                    to={page.path}
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
-                    {page.name}
-                  </Link>
-                ) : (
-                  <a
-                    href={`#${page.anchor}`}
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
-                    {page.name}
-                  </a>
-                )}
-              </Button>
-            ))}
+            {pages.map(renderNavItem)}
           </Box>
         </Toolbar>
       </Container>
