@@ -44,7 +44,6 @@ function Nav() {
         my: 2,
         color: "white",
         display: "block",
-        width: "100%",
         justifyContent: "center",
         textAlign: "center",
       }}
@@ -52,7 +51,12 @@ function Nav() {
       {page.type === "link" ? (
         <Link
           to={page.path}
-          style={{ textDecoration: "none", color: "inherit" }}
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+            display: "inline-block",
+            width: "auto",
+          }}
         >
           {page.name}
         </Link>
@@ -165,7 +169,15 @@ function Nav() {
           </Box>
 
           {/* Nav links desktop */}
-          <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              flexGrow: 0,
+              display: { xs: "none", md: "flex" },
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 2,
+            }}
+          >
             {pages.map(renderNavItem)}
           </Box>
         </Toolbar>
