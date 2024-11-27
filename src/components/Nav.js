@@ -40,7 +40,14 @@ function Nav() {
     <Button
       key={page.name}
       onClick={handleCloseNavMenu}
-      sx={{ my: 2, color: "white", display: "block" }}
+      sx={{
+        my: 2,
+        color: "white",
+        display: "block",
+        width: "100%",
+        justifyContent: "center",
+        textAlign: "center",
+      }}
     >
       {page.type === "link" ? (
         <Link
