@@ -15,10 +15,10 @@ import "../styles/Nav.css";
 import { Link } from "react-router-dom";
 
 const pages = [
-  { name: "Home", path: "/", type: "link" },
-  { name: "Quote", path: "/quote", type: "link" },
-  { name: "Properties", path: "/serenity", type: "link" },
-  { name: "Services", path: "/design", type: "link" },
+  { name: "Home", path: "/" },
+  { name: "Quote", path: "/quote" },
+  { name: "Properties", path: "/serenity" },
+  { name: "Services", path: "/design" },
 ];
 
 function Nav() {
@@ -37,18 +37,25 @@ function Nav() {
   const isHome = pathname === "/";
 
   const renderNavItem = (page) => (
-    <Button
+    <MenuItem
       key={page.name}
       onClick={handleCloseNavMenu}
       sx={{
-        my: 2,
-        color: "white",
-        display: "block",
         justifyContent: "center",
         textAlign: "center",
       }}
     >
-      {page.type === "link" ? (
+      <Button
+        key={page.name}
+        onClick={handleCloseNavMenu}
+        sx={{
+          my: 2,
+          color: "white",
+          display: "block",
+          justifyContent: "center",
+          textAlign: "center",
+        }}
+      >
         <Link
           to={page.path}
           style={{
@@ -60,15 +67,8 @@ function Nav() {
         >
           {page.name}
         </Link>
-      ) : (
-        <a
-          href={`#${page.anchor}`}
-          style={{ textDecoration: "none", color: "inherit" }}
-        >
-          {page.name}
-        </a>
-      )}
-    </Button>
+      </Button>
+    </MenuItem>
   );
 
   return (
