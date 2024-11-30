@@ -38,8 +38,10 @@ function Eden() {
     <div className="properties-container">
       <Nav />
       <div className="portfolio-container">
-        <PropertyDropDown />
-        <h1 className="text-span-2">Eden Enclave</h1>
+        <div className="dropdown">
+          <PropertyDropDown />
+        </div>
+        <h1 className="slider-title">Eden Enclave</h1>
         <div className="portfolio-slider-container" id="properties">
           {properties.map((property, index) => (
             <SlideComponent

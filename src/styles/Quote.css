@@ -1,46 +1,46 @@
 @keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
-
 
 .Quote {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    place-content: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  place-content: center;
 }
 
-.quote-title{
-    padding-top: 30px;
-    padding-bottom: 20px;
-    grid-column: span 12;
-    text-align: center;
+.quote-title {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  grid-column: span 12;
+  text-align: center;
 }
 
-.quote-form{
-    animation: 1s ease-out 0s 1 slideInFromLeft;
-    grid-column: 2/ span 10;
-    text-align: center;
+.quote-form {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  grid-column: 2 / span 10;
+  text-align: center;
 }
 
 @media (min-width: 1200px) {
-    .quote-form {
-        grid-column: 5 / span 4;
-        display: flex; 
-        flex-direction: row;
-        flex-wrap: wrap; 
-        justify-content: space-between;
-    }
+  .quote-form {
+    grid-column: 5 / span 4;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
-    .quote-form .MuiFormControl-root {
-        flex: 1;
-        min-width: 200px;
-        margin: 8px;
-    }
+  .quote-form .MuiFormControl-root {
+    flex: 1;
+    min-width: 200px;
+    margin: 8px;
+  }
 }

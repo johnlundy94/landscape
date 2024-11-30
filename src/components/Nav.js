@@ -34,41 +34,30 @@ function Nav() {
     setMenuAnchor(null);
   };
 
-  const isHome = pathname === "/";
-
   const renderNavItem = (page) => (
-    <MenuItem
+    <Button
       key={page.name}
       onClick={handleCloseNavMenu}
       sx={{
+        my: 2,
+        color: "white",
+        display: "block",
         justifyContent: "center",
         textAlign: "center",
       }}
     >
-      <Button
-        key={page.name}
-        onClick={handleCloseNavMenu}
-        sx={{
-          my: 2,
-          color: "white",
-          display: "block",
-          justifyContent: "center",
-          textAlign: "center",
+      <Link
+        to={page.path}
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+          display: "inline-block",
+          width: "auto",
         }}
       >
-        <Link
-          to={page.path}
-          style={{
-            textDecoration: "none",
-            color: "inherit",
-            display: "inline-block",
-            width: "auto",
-          }}
-        >
-          {page.name}
-        </Link>
-      </Button>
-    </MenuItem>
+        {page.name}
+      </Link>
+    </Button>
   );
 
   return (

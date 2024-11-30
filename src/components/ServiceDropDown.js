@@ -34,7 +34,6 @@ export default function BasicMenu() {
           "aria-labelledby": "basic-button",
         }}
       >
-        {/* Update these MenuItems to link to your desired paths */}
         <MenuItem onClick={handleClose}>
           <Link
             to="/design"

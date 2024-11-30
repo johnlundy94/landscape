@@ -39,7 +39,7 @@ function Serenity() {
       <Nav />
       <div className="portfolio-container">
         <PropertyDropDown />
-        <h1 className="text-span-2">Serenity Gardens</h1>
+        <h1 className="slider-title">Serenity Gardens</h1>
         <div className="slider-container" id="properties">
           {properties.map((property, index) => (
             <SlideComponent

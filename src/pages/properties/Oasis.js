@@ -39,7 +39,7 @@ function Oasis() {
       <Nav />
       <div className="portfolio-container">
         <PropertyDropDown />
-        <h1 className="text-span-2">Oasis Estates</h1>
+        <h1 className="slider-title">Oasis Estates</h1>
         <div className="portfolio-slider-container" id="properties">
           {properties.map((property, index) => (
             <SlideComponent

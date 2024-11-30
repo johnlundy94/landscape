@@ -1,3 +1,19 @@
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.dropdown {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  grid-column: 1 / span 1;
+}
+
 .properties-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -5,114 +21,116 @@
 }
 
 .portfolio-container {
-    display: grid;
-    gap: .5rem;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 40px auto;
-    grid-column: 2 / span 10;
-    max-width: 100%;
-  }
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 40px auto;
+  grid-column: 2 / span 10;
+  max-width: 100%;
+}
 
-  .portfolio-slider-container{
-    grid-column: span 3;
-    position: relative;
-    overflow: hidden; 
-    width: 100%; 
-    height: 50vh; 
-    object-fit: cover;
-  }
+.portfolio-slider-container {
+  grid-column: span 3;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}
 
-  .text-span-2 {
-    text-align: center;
-    grid-column: 2 / span 2;
-  }
-  
-  .slider {
-    position: absolute;
-    width: 100%; 
-    height: 100%;
-  }
+.slider-title {
+  text-align: center;
+  grid-column: 2 / span 2;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
 
-  .slider-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
-  }
+.slider-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
-  .slider-buttons {
-    grid-column: span 3;
-    text-align: center;
-  }
+.slider-buttons {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  grid-column: span 3;
+  text-align: center;
+}
 
-  .slider-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
+.slider-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
-  .property-title {
-    padding-top: 30px;
-    padding-bottom: 20px;
-    grid-column: span 12;
-    text-align: center;
-} 
+.property-title {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  grid-column: span 12;
+  text-align: center;
+}
 
 .property-text {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
   font-size: 15px;
-  grid-column: 2/ span 10;
+  grid-column: 2 / span 10;
   text-align: left;
-} 
+}
 
-  @media (min-width: 488px) {
-    .portfolio-container {
-      grid-column: 3 / span 8;
-    }
-    .portfolio-slider-container{
-      grid-column: span 3;
-      position: relative;
-      overflow: hidden; 
-      width: 100%; 
-      height: 50vh; 
-      object-fit: cover;
-    }
+@media (min-width: 488px) {
+  .portfolio-container {
+    grid-column: 3 / span 8;
   }
+  .portfolio-slider-container {
+    grid-column: span 3;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+  }
+}
 
-  @media (min-width: 650px) {
-    .portfolio-container {
-      grid-column: 4 / span 6;
-    }
-    .portfolio-slider-container{
-      grid-column: span 3;
-      position: relative;
-      overflow: hidden; 
-      width: 100%; 
-      height: 50vh; 
-      object-fit: cover;
-    }
+@media (min-width: 650px) {
+  .portfolio-container {
+    grid-column: 4 / span 6;
   }
+  .portfolio-slider-container {
+    grid-column: span 3;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+  }
+}
 
-  
-  @media (min-width: 1018px) {
-    .portfolio-container {
-      grid-column: 5 / span 4;
-    }
-    .portfolio-slider-container{
-      grid-column: span 3;
-      position: relative;
-      overflow: hidden; 
-      width: 100%; 
-      height: 50vh; 
-      object-fit: cover;
-    }
+@media (min-width: 1018px) {
+  .portfolio-container {
+    grid-column: 5 / span 4;
   }
-  @media (max-width: 2000px) {
-    .portfolio-slider-container{
-      grid-column: span 3;
-      position: relative;
-      overflow: hidden; 
-      width: 100%; 
-      height: 50vh; 
-      object-fit: cover;
-    }
+  .portfolio-slider-container {
+    grid-column: span 3;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
   }
+}
+@media (max-width: 2000px) {
+  .portfolio-slider-container {
+    grid-column: span 3;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+  }
+}

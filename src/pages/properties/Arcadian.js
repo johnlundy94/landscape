@@ -39,7 +39,7 @@ function Arcadian() {
       <Nav />
       <div className="portfolio-container">
         <PropertyDropDown />
-        <h1 className="text-span-2">Arcadian Retreat</h1>
+        <h1 className="slider-title">Arcadian Retreat</h1>
         <div className="portfolio-slider-container" id="properties">
           {properties.map((property, index) => (
             <SlideComponent

@@ -39,7 +39,7 @@ function Elysian() {
       <Nav />
       <div className="portfolio-container">
         <PropertyDropDown />
-        <h1 className="text-span-2">Elysian Fields</h1>
+        <h1 className="slider-title">Elysian Fields</h1>
         <div className="portfolio-slider-container" id="properties">
           {properties.map((property, index) => (
             <SlideComponent
