@@ -1,6 +1,12 @@
 import "../styles/Hero.css";
 import starSVG from "../assets/five-star.svg";
 
+const testimonials = [
+  { name: "Sawyer Residence" },
+  { name: "McCarthy Residence" },
+  { name: "Hopkins Residence" },
+];
+
 function Hero() {
   return (
     <div className="hero-container">
@@ -14,17 +20,13 @@ function Hero() {
         Every project is a partnership with nature, crafted to suit your unique
         style and preferences.
       </p>
-      <div className="star1">
-        <img src={starSVG} alt="Five Star" />
-        <p>Sawyer Residence</p>
-      </div>
-      <div className="star2">
-        <img src={starSVG} alt="Five Star" />
-        <p>McCarthy Residence</p>
-      </div>
-      <div className="star3">
-        <img src={starSVG} alt="Five Star" />
-        <p> Hopkins Residence</p>
+      <div className="hero-testimonials">
+        {testimonials.map((testimonial, index) => (
+          <div className="star" key={index}>
+            <img src={starSVG} alt="Five Star" />
+            <p>{testimonial.name}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

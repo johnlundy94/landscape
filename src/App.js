@@ -3,7 +3,6 @@ import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "./styles/muiTheme";
 import Home from "./pages/Home";
 import Quote from "./pages/Quote";
-import Arcadian from "./pages/properties/Arcadian";
 import Eden from "./pages/properties/Eden";
 import Elysian from "./pages/properties/Elysian";
 import Oasis from "./pages/properties/Oasis";
@@ -27,7 +26,6 @@ function App() {
             <Route path="/outdoor" element={<Outdoor />} />
             <Route path="/irrigation" element={<Irrigation />} />
             <Route path="/quote" element={<Quote />} />
-            <Route path="/arcadian" element={<Arcadian />} />
             <Route path="/eden" element={<Eden />} />
             <Route path="/elysian" element={<Elysian />} />
             <Route path="/oasis" element={<Oasis />} />

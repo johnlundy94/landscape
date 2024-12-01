@@ -3,23 +3,19 @@ import "../styles/Portfolio.css";
 import SlideComponent from "../api/SlideComponent";
 import landscape1 from "../assets/serenity/serenity1.png";
 import landscape2 from "../assets/elysian/elysian1.png";
-import landscape3 from "../assets/arcadian/arcadian1.png";
 import landscape4 from "../assets/eden/eden1.png";
 import landscape5 from "../assets/oasis/oasis1.png";
 import { Button } from "@mui/material";
-import { Link } from 'react-router-dom'
-
+import { Link } from "react-router-dom";
 
 function Portfolio() {
-
   const [activeIndex, setActiveIndex] = useState(0);
 
   const landscapes = [
-    { name: 'Serenity Gardens', image: landscape1, link: '/serenity' },
-    { name: 'Elysian Fields', image: landscape2, link: "/elysian" },
-    { name: 'Arcadian Retreat', image: landscape3, link: "/arcadian" },
-    { name: 'Eden Enclave', image: landscape4, link: '/eden' },
-    { name: 'Oasis Estates', image: landscape5, link: '/oasis' },
+    { name: "Serenity Gardens", image: landscape1, link: "/serenity" },
+    { name: "Elysian Fields", image: landscape2, link: "/elysian" },
+    { name: "Eden Enclave", image: landscape4, link: "/eden" },
+    { name: "Oasis Estates", image: landscape5, link: "/oasis" },
   ];
 
   const nextSlide = () => {
@@ -37,20 +33,27 @@ function Portfolio() {
   return (
     <div className="portfolio-container" id="properties">
       <h1 className="portfolio-title">Our Portfolio</h1>
-      <div className="slider-container" >
+      <div className="slider-container">
         {landscapes.map((landscape, index) => (
-          <SlideComponent className="slider" isActive={activeIndex === index} direction="left">
-            <img src={landscape.image} alt={`Slide image ${index + 1}`} className="slider-image" />
+          <SlideComponent
+            className="slider"
+            isActive={activeIndex === index}
+            direction="left"
+          >
+            <img
+              src={landscape.image}
+              alt={`Slide image ${index + 1}`}
+              className="slider-image"
+            />
             <div className="slider-text">
-              <div className="slider-name">
-                {landscape.name}
-              </div>
+              <div className="slider-name">{landscape.name}</div>
               <div className="slider-link">
-
-                  <Link to={landscape.link} style={{ textDecoration: 'none', color: 'inherit' }}>
-                    {"VIEW PROPERTY"}
-                  </Link>
-
+                <Link
+                  to={landscape.link}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  {"VIEW PROPERTY"}
+                </Link>
               </div>
             </div>
           </SlideComponent>
