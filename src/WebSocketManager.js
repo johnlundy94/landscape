@@ -15,7 +15,7 @@ class WebSocketManager {
     this.ws = new WebSocket(this.url);
 
     this.ws.onopen = (event) => {
-      console.log("WebSocket connection established", event);
+      console.log("WebSocket connection established", this.ws.url);
       this.isConnected = true;
     };
 
@@ -43,8 +43,11 @@ class WebSocketManager {
   }
 
   setOnMessage(callback) {
+    console.log("setOnMessage called with callback:", callback); // Log when setOnMessage is called
     this.ws.onmessage = (event) => {
       const message = JSON.parse(event.data);
+      console.log("WebSocket message received: ", message);
+
       callback(message);
     };
   }

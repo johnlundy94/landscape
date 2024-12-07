@@ -122,6 +122,7 @@ function Quote() {
         action: "postQuote",
         data: formData,
       });
+      setOpenSuccessDialog(true);
     } else {
       setErrorMessage("Please correct the errors in the form.");
       setOpenErrorDialog(true);
