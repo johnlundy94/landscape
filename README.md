@@ -34,4 +34,3 @@ The interface allows users to visualize landscaping designs and schedule quotes 
 ## Links
 
 - [Website](https://www.verdantvisionslandscaping.com/)
-- [GitHub Repo](https://github.com/johnlundy94/landscape)
