@@ -26,7 +26,7 @@ The interface allows users to visualize landscaping designs and schedule quotes 
 
 ## Tech Stack
 
-- **Reeact**: Offers a sleek UI/UX.
+- **React**: Offers a sleek UI/UX.
 - **AWS**: Powers the backend and infrastructure.
 - **Serverless Architecture**: Ensures scalability and cost-efficiency.
 - **Database Scalability**: Provides a scalable database solution.
