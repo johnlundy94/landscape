@@ -31,7 +31,7 @@
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
-  transform: translate(-10%, -10%);
+  transform: translate(0%, -10%);
 }
 
 .hero-nav a {
@@ -41,6 +41,9 @@
   position: relative;
   padding: 5px 0;
   transition: color 0.3s ease;
+  background: linear-gradient(45deg, #a8d5ba, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-nav a::after {

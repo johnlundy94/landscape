@@ -1,6 +1,5 @@
 import "../styles/Hero.css";
 import starSVG from "../assets/five-star.svg";
-import verdantVideo from "../assets/verdantherovideo.mp4";
 
 const testimonials = [
   { name: "Sawyer Residence" },
@@ -21,7 +20,7 @@ function Hero() {
       <div className="hero-background">
         <div className="hero-video-container">
           <video autoPlay loop muted playsInline>
-            <source src={verdantVideo} type="video/mp4" />
+            <source src="/verdantherovideo.mp4" type="video/mp4" />
           </video>
           <div className="video-overlay"></div>
         </div>
