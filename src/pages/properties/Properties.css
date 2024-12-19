@@ -21,6 +21,7 @@
 }
 
 .portfolio-container {
+  padding-top: 50px;
   display: grid;
   gap: 0.5rem;
   grid-template-columns: repeat(3, 1fr);

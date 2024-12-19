@@ -1,7 +1,5 @@
-.Nav{
-    max-width: 100%;
-    display: grid;
-    grid-column: span 12;
-    margin-bottom: 30px;
+.Nav {
+  max-width: 100%;
+  display: grid;
+  grid-column: span 12;
 }
-
