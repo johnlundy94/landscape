@@ -20,7 +20,7 @@ function Hero() {
       <div className="hero-background">
         <div className="hero-video-container">
           <video autoPlay loop muted playsInline>
-            {/* Testing video 6*/}
+            {/* Testing video 7*/}
             <source src="/verdantherovideo.mp4" type="video/mp4" />
           </video>
           <div className="video-overlay"></div>
