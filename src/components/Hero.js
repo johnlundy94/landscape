@@ -19,8 +19,7 @@ function Hero() {
 
       <div className="hero-background">
         <div className="hero-video-container">
-          <video autoPlay loop muted playsInline>
-            {/* Testing video 7*/}
+          <video data-testid="hero-video" autoPlay loop muted playsInline>
             <source
               src="https://verdantherovideo.s3.us-east-2.amazonaws.com/verdantherovideo.mp4"
               type="video/mp4"
@@ -33,7 +32,7 @@ function Hero() {
 
       <div className="hero-content">
         <p className="hero-text">
-          Verdant Visions Landscapings brings your vision of outdoor beauty to
+          Verdant Visions Landscaping brings your vision of outdoor beauty to
           life, regardless of budget size. We pride ourselves on offering a wide
           range of landscaping services, from basic lawn care to complete garden
           overhauls. Our team works diligently to create spaces that enhance
