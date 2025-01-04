@@ -44,6 +44,7 @@ function Portfolio() {
               src={landscape.image}
               alt={`Slide image ${index + 1}`}
               className="slider-image"
+              data-testid={`slider-image-${index}`}
             />
             <div className="slider-text">
               <div className="slider-name">{landscape.name}</div>
