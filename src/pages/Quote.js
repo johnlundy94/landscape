@@ -143,7 +143,20 @@ function Quote() {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Thank you for your interest! We will reach out shortly!
+            Now that your quote has been submitted, take a look at the admin
+            site so you can see your quote submission and the functionality of
+            that site:{" "}
+            <a
+              href="https://verdantvisionslandscapingadmin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "white",
+                textDecoration: "underline",
+              }}
+            >
+              Verdant Visions Admin Site
+            </a>{" "}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -190,7 +203,7 @@ function Quote() {
             fullWidth
           />
           <TextField
-            label="Email"
+            label="Email (Enter real email if you wish to use the admin sites messaging system)"
             variant="outlined"
             name="email"
             value={formData.email}
@@ -199,6 +212,11 @@ function Quote() {
             helperText={formErrors.email}
             margin="normal"
             fullWidth
+            multiline
+            rows={4}
+            InputLabelProps={{
+              style: { whiteSpace: "normal", textAlign: "left" },
+            }}
           />
           <TextField
             label="Phone Number"

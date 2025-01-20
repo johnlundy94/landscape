@@ -72,7 +72,6 @@ describe("Services Component", () => {
 
     const cards = screen.getAllByTestId("custom-card");
 
-    // Validate the first card
     expect(cards[0]).toHaveTextContent("Mock Landscape Design");
     expect(cards[0].querySelector("img")).toHaveAttribute(
       "src",
@@ -80,7 +79,6 @@ describe("Services Component", () => {
     );
     expect(cards[0].querySelector("a")).toHaveAttribute("href", "/design");
 
-    // Validate the second card
     expect(cards[1]).toHaveTextContent("Mock Outdoor Living Spaces");
     expect(cards[1].querySelector("img")).toHaveAttribute(
       "src",
@@ -88,7 +86,6 @@ describe("Services Component", () => {
     );
     expect(cards[1].querySelector("a")).toHaveAttribute("href", "/design");
 
-    // Validate the third card
     expect(cards[2]).toHaveTextContent("Mock Irrigation");
     expect(cards[2].querySelector("img")).toHaveAttribute(
       "src",
