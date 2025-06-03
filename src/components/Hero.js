@@ -21,7 +21,7 @@ function Hero() {
         <div className="hero-video-container">
           <video data-testid="hero-video" autoPlay loop muted playsInline>
             <source
-              src="https://verdantherovideo.s3.us-east-2.amazonaws.com/verdantherovideo.mp4"
+              src="https://d3muw82bfmjmaz.cloudfront.net/verdantherovideo.mp4"
               type="video/mp4"
             />
           </video>
