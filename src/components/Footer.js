@@ -1,11 +1,5 @@
-import {
-  Box,
-  Container,
-  Grid,
-  Typography,
-  IconButton,
-} from "@mui/material";
-import {Link} from 'react-router-dom'
+import { Box, Container, Grid, Typography, IconButton } from "@mui/material";
+import { Link } from "react-router-dom";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -16,22 +10,40 @@ function Footer() {
   return (
     <div className="footer-container">
       <div className="footer-links">
-        <Link to="/" style={{ textDecoration: 'none', color: '#fbfbfb', padding: 10}}>
+        <Link
+          to="/"
+          style={{ textDecoration: "none", color: "#fbfbfb", padding: 10 }}
+        >
           Home
         </Link>
-        <Link to="/design" style={{ textDecoration: 'none', color: '#fbfbfb', padding: 10 }}>
+        <Link
+          to="/design"
+          style={{ textDecoration: "none", color: "#fbfbfb", padding: 10 }}
+        >
           Landscape Design
         </Link>
-        <Link to="/outdoor" style={{ textDecoration: 'none', color: '#fbfbfb', padding: 10 }}>
+        <Link
+          to="/outdoor"
+          style={{ textDecoration: "none", color: "#fbfbfb", padding: 10 }}
+        >
           Outdoor Living Spaces
         </Link>
-        <Link to="/irrigation" style={{ textDecoration: 'none', color: '#fbfbfb', padding: 10 }}>
+        <Link
+          to="/irrigation"
+          style={{ textDecoration: "none", color: "#fbfbfb", padding: 10 }}
+        >
           Irrigation
         </Link>
-        <Link to="/property" style={{ textDecoration: 'none', color: '#fbfbfb', padding: 10 }}>
+        <Link
+          to="/eden"
+          style={{ textDecoration: "none", color: "#fbfbfb", padding: 10 }}
+        >
           Properties
         </Link>
-        <Link to="/quote" style={{ textDecoration: 'none', color: '#fbfbfb', padding: 10 }}>
+        <Link
+          to="/quote"
+          style={{ textDecoration: "none", color: "#fbfbfb", padding: 10 }}
+        >
           Quote
         </Link>
       </div>

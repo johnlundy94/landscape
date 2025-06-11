@@ -215,7 +215,17 @@ function Quote() {
             multiline
             rows={4}
             InputLabelProps={{
-              style: { whiteSpace: "normal", textAlign: "left" },
+              sx: {
+                whiteSpace: "normal",
+                textAlign: "left",
+                "&.MuiInputLabel-shrink": {
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  display: "inline-block",
+                  maxWidth: "calc(75% - 32px)",
+                },
+              },
             }}
           />
           <TextField
