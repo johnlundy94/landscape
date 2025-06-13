@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import "./Properties.css";
 import SlideComponent from "../../api/SlideComponent";
 import eden1 from "../../assets/eden/eden1.png";
@@ -11,10 +11,12 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PropertyDropDown from "../../components/PropertyDropDown";
 
-function Eden() {
-  const [activeIndex, setActiveIndex] = useState(0);
+interface Slide { image: string; }
 
-  const properties = [
+const Eden: FC = () => {
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  const properties: Slide []= [
     { image: eden1 },
     { image: eden2 },
     { image: eden3 },
