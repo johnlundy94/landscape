@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import "./Properties.css";
 import SlideComponent from "../../api/SlideComponent";
 import serenity1 from "../../assets/serenity/serenity1.png";
@@ -11,10 +11,14 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PropertyDropDown from "../../components/PropertyDropDown";
 
-function Serenity() {
+interface Slide {
+  image: string
+}
+
+const Serenity: FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const properties = [
+  const properties: Slide[] = [
     { image: serenity1 },
     { image: serenity2 },
     { image: serenity3 },

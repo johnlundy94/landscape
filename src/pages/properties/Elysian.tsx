@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import "./Properties.css";
 import SlideComponent from "../../api/SlideComponent";
 import elysian1 from "../../assets/elysian/elysian1.png";
@@ -11,10 +11,13 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PropertyDropDown from "../../components/PropertyDropDown";
 
-function Elysian() {
+interface Slide {
+  image: string
+} 
+const Elysian: FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const properties = [
+  const properties: Slide[] = [
     { image: elysian1 },
     { image: elysian2 },
     { image: elysian3 },

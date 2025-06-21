@@ -1,10 +1,11 @@
+import {FC} from "react";
 import "./Services.css";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import service3 from "../../assets/service3.png";
 import ServiceDropDown from "../../components/ServiceDropDown";
 
-function Irrigation() {
+const Irrigation: FC = () => {
   return (
     <div className="Services">
       <Nav />

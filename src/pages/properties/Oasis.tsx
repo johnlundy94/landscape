@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import "./Properties.css";
 import SlideComponent from "../../api/SlideComponent";
 import oasis1 from "../../assets/oasis/oasis1.png";
@@ -11,10 +11,14 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PropertyDropDown from "../../components/PropertyDropDown";
 
-function Oasis() {
+interface Slide {
+  image: string 
+}
+
+const Oasis: FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const properties = [
+  const properties: Slide[] = [
     { image: oasis1 },
     { image: oasis2 },
     { image: oasis3 },

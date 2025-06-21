@@ -1,10 +1,11 @@
+import {FC} from "react"
 import "./Services.css";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import service2 from "../../assets/service2.png";
 import ServiceDropDown from "../../components/ServiceDropDown";
 
-function Outdoor() {
+const Outdoor: FC = () => {
   return (
     <div className="Services">
       <Nav />
