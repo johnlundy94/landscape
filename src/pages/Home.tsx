@@ -1,3 +1,4 @@
+import {FC} from "react"
 import "../styles/Home.css";
 import Nav from "../components/Nav";
 import Hero from "../components/Hero";
@@ -8,8 +9,8 @@ import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
 import { useMediaQuery } from "@mui/material";
 
-function Home() {
-  const isSmallScreen = useMediaQuery("(max-width:820px)");
+const Home: FC = () => {
+  const isSmallScreen: boolean = useMediaQuery("(max-width:820px)");
 
   return (
     <div className="Home">
