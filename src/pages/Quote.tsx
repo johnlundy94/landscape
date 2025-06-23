@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { FC, useState, useEffect, ChangeEvent, FormEvent } from "react";
 import "../styles/Quote.css";
 import { Link } from "react-router-dom";
 import {
@@ -19,8 +19,44 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import WebSocketManager from "../WebSocketManager";
 
-function Quote() {
-  const [formData, setFormData] = useState({
+// The three service checkboxes
+interface Services{
+  landscapeDesign: boolean;
+  outdoorLivingSpaces: boolean;
+  irrigation: boolean; 
+}
+
+// Form data
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  services: Services;
+  budget: string;
+  description: string;
+}
+
+// The shape of error-strings for each field
+interface FormErrors {
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  budget: string;
+  description: string;
+}
+
+// Websocket message shape
+interface WSMessage {
+  action: "postQuote" | "getQuotes";
+  quote?: FormData;
+  quoteId?: string;
+  error?: string;
+}
+
+const Quote: FC = () => {
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
@@ -34,7 +70,7 @@ function Quote() {
     description: "",
   });
 
-  const [formErrors, setFormErrors] = useState({
+  const [formErrors, setFormErrors] = useState<FormErrors>({
     name: "",
     email: "",
     phone: "",
@@ -43,22 +79,22 @@ function Quote() {
     description: "",
   });
 
-  const [openSuccessDialog, setOpenSuccessDialog] = useState(false);
-  const [openErrorDialog, setOpenErrorDialog] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [openSuccessDialog, setOpenSuccessDialog] = useState<boolean>(false);
+  const [openErrorDialog, setOpenErrorDialog] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
-  const validateEmail = (email) => {
+  const validateEmail = (email: string) => {
     const regEmail =
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regEmail.test(email);
   };
 
-  const validatePhone = (phone) => {
+  const validatePhone = (phone: string) => {
     const regPhone = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
     return regPhone.test(phone);
   };
 
-  const validateField = (name, value) => {
+  const validateField = (name: keyof FormData, value: string | boolean) => {
     if (typeof value === "boolean") {
       return "";
     }
@@ -76,7 +112,7 @@ function Quote() {
   };
 
   useEffect(() => {
-    WebSocketManager.setOnMessage((message) => {
+    WebSocketManager.setOnMessage((message: WSMessage) => {
       console.log("Message received", message);
       if (message.error) {
         setErrorMessage(message.error);
@@ -91,7 +127,7 @@ function Quote() {
     };
   }, []);
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const { name, value, checked, type } = event.target;
     if (type === "checkbox") {
       setFormData((prevState) => ({
@@ -109,11 +145,11 @@ function Quote() {
     }
     setFormErrors((prevErrors) => ({
       ...prevErrors,
-      [name]: validateField(name, type === "checkbox" ? checked : value),
+      [name]: validateField(name as keyof FormData, value),
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     const hasErrors = Object.values(formErrors).some((error) => error);
 
