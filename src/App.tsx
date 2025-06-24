@@ -1,3 +1,4 @@
+import { FC } from "react";
 import "./App.css";
 import { ThemeProvider } from "@mui/material/styles";
 import muiTheme from "./styles/muiTheme";
@@ -14,7 +15,7 @@ import BackToTop from "./components/BackToTop";
 import ToQuote from "./components/ToQuote";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+const App: FC = () => {
   return (
     <div className="App">
       <ThemeProvider theme={muiTheme}>
@@ -31,13 +32,12 @@ function App() {
             <Route path="/oasis" element={<Oasis />} />
             <Route path="/serenity" element={<Serenity />} />
             <Route path="/design" element={<Design />} />
-            <Route path="/irrigation" element={<Irrigation />} />
             <Route path="/outdoor" element={<Outdoor />} />
           </Routes>
         </Router>
       </ThemeProvider>
     </div>
   );
-}
+};
 
 export default App;

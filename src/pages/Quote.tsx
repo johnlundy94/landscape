@@ -18,6 +18,7 @@ import {
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import WebSocketManager from "../WebSocketManager";
+import type {WSMessage} from "../types/WSMessage"
 
 // The three service checkboxes
 interface Services{
@@ -27,7 +28,7 @@ interface Services{
 }
 
 // Form data
-interface FormData {
+export interface FormData {
   name: string;
   email: string;
   phone: string;
@@ -45,14 +46,6 @@ interface FormErrors {
   address: string;
   budget: string;
   description: string;
-}
-
-// Websocket message shape
-interface WSMessage {
-  action: "postQuote" | "getQuotes";
-  quote?: FormData;
-  quoteId?: string;
-  error?: string;
 }
 
 const Quote: FC = () => {
