@@ -2,7 +2,39 @@
 
 ## Description
 
-Verdant Visions Landscaping is a sleek interface powered by React and Material UI, coupled with AWS services, dedicated to showing off landscape services. It provides design visualization and appointment scheduling features. This project showcases expertise in cloud solutions, serverless architecture, and scalable databases.
+Verdant Visions Landscaping is a client-facing single-page application built with React, TypeScript and Material-UI, leveraging AWS WebSocket APIs for real-time quote submission. Users can explore portfolio galleries, review service offerings, and submit landscaping quote requests—receiving instant confirmation via WebSocket.
+
+## Features
+
+- **Portfolio Browsing**  
+  View beautifully rendered garden and landscape designs in an image carousel.
+
+- **Service Overview**  
+  Learn about our offerings—landscape design, outdoor living spaces, irrigation.
+
+- **Real-Time Quote Request**  
+  Fill out a dynamic quote form; submit via WebSocket and get instant feedback.
+
+- **Responsive Design**  
+  Fully mobile-friendly layouts and navigation.
+
+## Technologies Used
+
+### Frontend
+
+- **React**
+- **TypeScript** (core pages, entry points, and WebSocket manager)
+- **Material-UI** (custom theme, components)
+- **React Router** (client-side routing)
+- **WebSocket API** (custom `WebSocketManager.ts`)
+
+### Backend Integration
+
+> _(see serverless repo for full implementation)_
+
+- AWS API Gateway (WebSocket)
+- AWS Lambda
+- AWS DynamoDB
 
 ## Installation
 
@@ -33,4 +65,5 @@ The interface allows users to visualize landscaping designs and schedule quotes 
 
 ## Links
 
-- [Website](https://www.verdantvisionslandscaping.com/)
+- [Live Website](https://www.verdantvisionslandscaping.com/)
+- [Live Admin Website](https://verdantvisionslandscapingadmin.com/)
